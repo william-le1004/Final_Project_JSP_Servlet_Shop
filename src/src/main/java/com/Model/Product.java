@@ -30,11 +30,11 @@ public class Product {
       @Column(name = "Product_Price")
       private Double productPrice;
       @ManyToOne
-      @JoinColumn(name = "Cart_ID_P", nullable = true, referencedColumnName = "Cart_ID")
+      @JoinColumn(name = "Cart_ID", nullable = true, referencedColumnName = "Cart_ID")
       private Cart cart;
 
-      //      @OneToOne(mappedBy = "products")
-      @OneToOne(cascade = CascadeType.ALL)
-      @JoinColumn(name = "Category_ID", referencedColumnName = "Category_ID")
+      //      @OneToOne(mappedBy = "product")
+      @ManyToOne
+      @JoinColumn(name = "Category_ID", nullable = true, referencedColumnName = "Category_ID",)
       private Category category;
 }

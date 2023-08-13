@@ -37,14 +37,9 @@ public class AdminDAO implements DAO<Admin> {
       }
 
       public static void main(String[] args) {
-            add();
+
       }
-      public static void add(){
-            Admin a1 = new Admin("kien","1234");
-            Admin a2 = new Admin("tran","1234");
-            AdminDAO.getInstance().insert(a1);
-            AdminDAO.getInstance().insert(a2);
-      }
+
       @Override
       public void update(Admin admin) {
 

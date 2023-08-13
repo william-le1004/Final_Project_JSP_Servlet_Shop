@@ -1,5 +1,6 @@
 package com.Model;
 
+import com.Data.CategoryDATA;
 import lombok.*;
 
 import javax.persistence.*;
@@ -25,10 +26,7 @@ public class Category {
       private int categoryID;
       @Column(name = "Category_Name")
       private String categoryName;
-
-//      @OneToOne(cascade = CascadeType.ALL)
-//      @JoinColumn(name = "Product_ID", referencedColumnName = "Product_ID")
-      @OneToOne(mappedBy = "category")
-      private Product products;
+      @OneToMany(mappedBy = "category", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+      private Set<Product> items;
 
 }
