@@ -29,6 +29,8 @@ public class Product {
       private String productImg;
       @Column(name = "Product_Price")
       private Double productPrice;
+      @Column(name = "Product_Quantity")
+      private int quantity;
       @ManyToOne
       @JoinColumn(name = "Cart_ID_P", nullable = true, referencedColumnName = "Cart_ID")
       private Cart cart;
