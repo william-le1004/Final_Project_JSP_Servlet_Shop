@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%@include file="Header.jsp" %>
+        <%@include file="../layout/header.jsp" %>
         <!-------------------------------------------->
         
         <h1>PRODUT MANAGEMENT</h1>
@@ -20,11 +20,11 @@
         <h3>Inser bảng để CRUD ở đây</h3>
         
         
-        <a href="HomePage.jsp"><button>Return</button></a>
+        <a href="../user/homePage.jsp"><button>Return</button></a>
         
         
                 <!-------------------------------------------->
 
-        <%@include  file="Footer.jsp" %>
+        <%@include  file="../layout/footer.jsp" %>
     </body>
 </html>

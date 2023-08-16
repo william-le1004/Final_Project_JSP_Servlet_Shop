@@ -68,6 +68,15 @@ public class ProductDAO implements DAO<Product> {
       }
 
       public static void main(String[] args) {
+
+
+            Phone();
+            Tablet();
+            Laptop();
+            System.out.println(ProductDAO.getInstance().selectAll());
+      }
+
+      public static void Phone() {
             Category c1 = new Category();
             c1.setCategoryName("Phone");
 
@@ -103,9 +112,6 @@ public class ProductDAO implements DAO<Product> {
             ProductDAO.getInstance().insert(p2);
             ProductDAO.getInstance().insert(p3);
             ProductDAO.getInstance().insert(p4);
-
-            Tablet();
-            Laptop();
       }
 
       public static void Tablet() {

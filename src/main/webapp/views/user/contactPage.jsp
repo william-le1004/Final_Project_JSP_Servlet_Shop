@@ -13,7 +13,7 @@
                   .content {
 height: 316px;
 width: 1440px;
-background-image:url(../Image/backgound_login.jpg) ;
+background-image:url(../../Image/backgound_login.jpg) ;
 background-size: cover;
 
 }
@@ -45,14 +45,14 @@ z-index: 3;
         <title>Contact Page</title>
     </head>
     <body>
-        <%@include  file="Header.jsp" %>
+        <%@include  file="../layout/header.jsp" %>
         <!--------------------------------------------->
         
               
 <div class="content">
     <div class="text">
 <h1>CONTACT</h1>
-<h5><a href="HomePage.jsp" style="color: black; text-decoration: none;"> Home </a> > <a href="ContactPage.jsp" style="color: black; text-decoration: none;"> Contact </a></h5>        
+<h5><a href="homePage.jsp" style="color: black; text-decoration: none;"> Home </a> > <a href="contactPage.jsp" style="color: black; text-decoration: none;"> Contact </a></h5>
     </div>
 </div>
         
@@ -71,19 +71,19 @@ z-index: 3;
             <div class="info-icon" style="margin-left: 250px; margin-top: 40px;">
                 
                 <div class="company_info_1" style="line-height: 40px;">
-                <img src="../Image/location.svg">
+                <img src="../../Image/location.svg">
                 <span style="font-weight: bold;">Address</span><br>
                 <span>FPT University Quy Nhon</span>
                 </div>
                 
                 <div class="company_info_2" style="line-height: 40px;">
-                <img src="../Image/bxs_phone.svg">
+                <img src="../../Image/bxs_phone.svg">
                 <span style="font-weight: bold;">Phone</span><br>
                 <span>0987654321</span>
                 </div>
                 
                 <div class="company_info_3" style="line-height: 40px;">
-                <img src="../Image/bi_clock-fill.svg">
+                <img src="../../Image/bi_clock-fill.svg">
                 <span style="font-weight: bold;">Working time</span><br>
                 <span>Coder no leisure :))</span>
             </div>
@@ -122,7 +122,7 @@ z-index: 3;
         <div class="quality_holder" style="background-color:#FAF3EA; height: 300px;">
             <div class="quality_box" style="background-color:#FAF3EA; vertical-align: central; align-items: center; margin-left: 98px; margin-right: 98px;">
                 <div class="quality_1" style="margin-top: 110px;">
-                <img src="../Image/trophy 1.svg">
+                <img src="../../Image/trophy%201.svg">
                
                 <span style="font-weight: bold; margin-top: -0px;">High quality</span></br>
                 <span style="margin-left: 62px;">crafted from top materials</span>
@@ -130,26 +130,26 @@ z-index: 3;
                 
             
             <div class="quality_2" style="margin-top: 110px;">
-                <img src="../Image/guarantee.svg">
+                <img src="../../Image/guarantee.svg">
                 <span style="font-weight: bold;">Warranty Protection</span></br>
                 <span style="margin-left: 62px;">over 2 years</span>
             </div>
             
             <div class="quality_3" style="margin-top: 110px;">
-                <img src="../Image/shipping.svg">
+                <img src="../../Image/shipping.svg">
                 <span style="font-weight: bold;">Free Shipping</span></br>
                 <span style="margin-left: 62px;">Order over 150 $</span>
             </div>
             
             <div class="quality_4" style="margin-top: 110px;">
-                <img src="../Image/customer-support.svg">
+                <img src="../../Image/customer-support.svg">
                 <span style="font-weight: bold;">24 / 7 Support</span></br>
                 <span style="margin-left: 62px;">Dedicated support</span>
             </div>
         </div>
         </div>
         <!---------------------------------------------------->
-        <%@include  file="Footer.jsp" %>
+        <%@include  file="../layout/footer.jsp" %>
         
        
         

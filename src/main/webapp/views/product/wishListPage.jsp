@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%@include file="Header.jsp" %>
+        <%@include file="../layout/header.jsp" %>
         <!-------------------------------------------->
         
         <h1>PRODUT MANAGEMENT</h1>
@@ -23,12 +23,12 @@
         
         <!-- Nếu bấm add to cart thì bỏ sản phẩm đấy vào giỏ hàng luôn -->
         <button>Add to cart</button>
-        <a href="HomePage.jsp"><button>Return</button></a>
-        <a href="CheckoutPage.jsp"><button>Check out</button></a>
+        <a href="../user/homePage.jsp"><button>Return</button></a>
+        <a href="checkoutPage.jsp"><button>Check out</button></a>
         
         
                 <!-------------------------------------------->
 
-        <%@include  file="Footer.jsp" %>
+        <%@include  file="../layout/footer.jsp" %>
     </body>
 </html>

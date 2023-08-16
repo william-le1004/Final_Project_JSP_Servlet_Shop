@@ -4,7 +4,6 @@
     Author     : Administrator
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -228,35 +227,35 @@
             <div class="group">
                 <div class="overlap-group">
                     <div class="div">
-                        <div class="text-wrapper" style="z-index: 10;"><a href="HomePage.jsp">Home</a></div>
-                        <div class="text-wrapper-2"><a href="ShopPage.jsp">Shop</a></div>
-                        <div class="text-wrapper-3"><a href="BlogPage.jsp">About</a></div>
-                        <div class="text-wrapper-4"><a href="ContactPage.jsp">Contact</a></div>
+                        <div class="text-wrapper" style="z-index: 10;"><a href="../user/homePage.jsp">Home</a></div>
+                        <div class="text-wrapper-2"><a href="../shopPage.jsp">Shop</a></div>
+                        <div class="text-wrapper-3"><a href="../user/blogPage.jsp">About</a></div>
+                        <div class="text-wrapper-4"><a href="../user/contactPage.jsp">Contact</a></div>
                     </div>
 
 
 
                     <div class="group-2">
-                        <a href="#"><img class="mdi-account-alert" alt="Mdi account alert" src="../Image/mdi-account-alert-outline.svg" /></a>
+                        <a href="#"><img class="mdi-account-alert" alt="Mdi account alert" src="../../Image/mdi-account-alert-outline.svg" /></a>
                         
                         <div class="d-flex justify-content-center h-100">
         <div class="searchbar">
             <input class="search_input" type="text" name="" placeholder="Search...">
-            <a href="#" class="search_icon"><img src="../Image/akar-icons-search.svg"></a>
+            <a href="#" class="search_icon"><img src="../../Image/akar-icons-search.svg"></a>
         </div>
       </div>
     
                         
                         
-                        <a href="WishListPage.jsp"><img class="akar-icons-heart" alt="Akar icons heart" src="../Image/akar-icons-heart.svg" /></a>
-                        <a href="CartPage.jsp"><img class="ant-design-shopping" alt="Ant design shopping" src="../Image/ant-design-shopping-cart-outlined.svg" /></a>
+                        <a href="../wishListPage.jsp"><img class="akar-icons-heart" alt="Akar icons heart" src="../../Image/akar-icons-heart.svg" /></a>
+                        <a href="../cartPage.jsp"><img class="ant-design-shopping" alt="Ant design shopping" src="../../Image/ant-design-shopping-cart-outlined.svg" /></a>
 
 
 
 
                         <div class="frame_header">
-                            <a href="HomePage.jsp"><img class="meubel-house-logos" alt="Meubel house logos" src="../Image/meubel-house-logos-05.png" /></a>
-                            <a href="HomePage.jsp"><img class="skin-clinic" alt="Skin clinic" src="../Image/skin-clinic.png" /></a>
+                            <a href="../user/homePage.jsp"><img class="meubel-house-logos" alt="Meubel house logos" src="../../Image/meubel-house-logos-05.png" /></a>
+                            <a href="../user/homePage.jsp"><img class="skin-clinic" alt="Skin clinic" src="../../Image/skin-clinic.png" /></a>
                         </div>
                     </div>
                 </div>

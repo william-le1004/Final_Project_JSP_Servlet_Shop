@@ -14,7 +14,7 @@
                .content {
 height: 316px;
 width: 1440px;
-background-image:url(../Image/backgound_login.jpg) ;
+background-image:url(../../Image/backgound_login.jpg) ;
 background-size: cover;
 
 }
@@ -49,13 +49,13 @@ z-index: 3;
         </style>
     </head>
     <body>
-        <%@include  file="Header.jsp"%>
+        <%@include  file="../layout/header.jsp"%>
         <!----------------------------------------------------->
                       
 <div class="content">
     <div class="text">
 <h1>BLOG</h1>
-<h5><a href="HomePage.jsp" style="color: black; text-decoration: none;"> Home </a> > <a href="BlogPage.jsp" style="color: black; text-decoration: none;"> Blog </a></h5>        
+<h5><a href="homePage.jsp" style="color: black; text-decoration: none;"> Home </a> > <a href="blogPage.jsp" style="color: black; text-decoration: none;"> Blog </a></h5>
     </div>
 </div>
         
@@ -64,7 +64,7 @@ z-index: 3;
         <div class="left_content" style="margin-top: 40px; margin-left: 100px;">
             
             <div class="left_content_1" style="width: 500px;">
-                <a href="https://www.apple.com/newsroom/2022/10/apple-introduces-next-generation-ipad-pro-supercharged-by-the-m2-chip/"><img src="../Image/ipad_pro.jpg" style="width: 400px;"></a>
+                <a href="https://www.apple.com/newsroom/2022/10/apple-introduces-next-generation-ipad-pro-supercharged-by-the-m2-chip/"><img src="../../Image/ipad_pro.jpg" style="width: 400px;"></a>
                 <a href="https://www.apple.com/newsroom/2022/10/apple-introduces-next-generation-ipad-pro-supercharged-by-the-m2-chip/" style="color: black; text-decoration: none;">
                     <h3 style="margin-top: 40px;">About Ipad Pro M2</h3>
                 </a>
@@ -77,7 +77,7 @@ z-index: 3;
             
             <!-------------------------------------------------------->
             <div class="left_content_2" style="width: 500px;">
-                <a href="https://www.apple.com/iphone-14-pro/specs/"><img src="../Image/iphone14.webp" style="width: 400px;"></a>
+                <a href="https://www.apple.com/iphone-14-pro/specs/"><img src="../../Image/iphone14.webp" style="width: 400px;"></a>
                 <a href="https://www.apple.com/iphone-14-pro/specs/" style="color: black; text-decoration: none;">
                     <h3 style="margin-top: 40px;">About Iphone 14 Pro Max</h3>
                 </a>
@@ -90,7 +90,7 @@ z-index: 3;
 
             <!--------------------------------------------------------------------->
             <div class="left_content_3" style="width: 500px;">
-                <a href="https://www.apple.com/macbook-air-m1/"><img src="../Image/macbook_air.jpg" style="width: 400px;"></a>
+                <a href="https://www.apple.com/macbook-air-m1/"><img src="../../Image/macbook_air.jpg" style="width: 400px;"></a>
                 <a href="https://www.apple.com/macbook-air-m1/" style="color: black; text-decoration: none;">
                     <h3 style="margin-top: 40px;">About Macbook Pro</h3>
                 </a>
@@ -105,7 +105,7 @@ z-index: 3;
                 <form class="search_bar">
                     <input type="text" placeholder="Search here" style="width:311px; height: 38px; border-radius: 10px;">
                     
-                    <button style="width:50px; height: 38px; background-color: white; border-color: white; cursor: pointer;"><img src="../Image/akar-icons-search.svg"></button>
+                    <button style="width:50px; height: 38px; background-color: white; border-color: white; cursor: pointer;"><img src="../../Image/akar-icons-search.svg"></button>
                 </form>
                 
             </div>
@@ -125,17 +125,17 @@ z-index: 3;
                      
                      
             <div class="related_post_1" style="display: flex; margin-bottom: 40px;">
-                <a href="#"><img src="../Image/iphone11.jpg" style="width: 150px; height: 150px;"></a>
+                <a href="#"><img src="../../Image/iphone11.jpg" style="width: 150px; height: 150px;"></a>
                     <a href="#"><h6 style="width: 180px; text-align: justify; margin-top: 35px; color: black;"> Iphone 11 and something you don't know </h6></a>
                 </div>    
             
                 <div class="related_post_2" style="display: flex; margin-bottom: 40px;">
-                    <a href="#"><img src="../Image/s21+.png"  style="width: 150px; height: 150px;"></a>
+                    <a href="#"><img src="../../Image/s21+.png" style="width: 150px; height: 150px;"></a>
                    <a href="#"> <h6 style="width: 180px; text-align: justify; margin-top: 58px; color: black;"> About Samsung S21+</h6></a>
                 </div>    
             
                 <div class="related_post_3" style="display: flex; margin-bottom: 40px;">
-                    <a href="#"><img src="../Image/s23_ultra.webp"  style="width: 150px; height: 150px;"></a>
+                    <a href="#"><img src="../../Image/s23_ultra.webp" style="width: 150px; height: 150px;"></a>
                    <a href="#"> <h6 style="width: 180px; text-align: justify; margin-top: 66px; color: black;">Samsung S23 ultra</h6></a>
                 </div>       
         </div>
@@ -152,25 +152,25 @@ z-index: 3;
         <div class="quality_holder" style="background-color:#FAF3EA; height: 300px;">
             <div class="quality_box" style="background-color:#FAF3EA; vertical-align: central; align-items: center; margin-left: 98px; margin-right: 98px;">
                 <div class="quality_1" style="margin-top: 110px;">
-                <img src="../Image/trophy 1.svg">
+                <img src="../../Image/trophy%201.svg">
                 <span style="font-weight: bold; margin-top: -0px;">High quality</span></br>
                 <span style="margin-left: 62px;">crafted from top materials</span>
             </div>
             
             <div class="quality_2" style="margin-top: 110px;">
-                <img src="../Image/guarantee.svg">
+                <img src="../../Image/guarantee.svg">
                 <span style="font-weight: bold;">Warranty Protection</span></br>
                 <span style="margin-left: 62px;">over 2 years</span>
             </div>
             
             <div class="quality_3" style="margin-top: 110px;">
-                <img src="../Image/shipping.svg">
+                <img src="../../Image/shipping.svg">
                 <span style="font-weight: bold;">Free Shipping</span></br>
                 <span style="margin-left: 62px;">Order over 150 $</span>
             </div>
             
             <div class="quality_4" style="margin-top: 110px;">
-                <img src="../Image/customer-support.svg">
+                <img src="../../Image/customer-support.svg">
                 <span style="font-weight: bold;">24 / 7 Support</span></br>
                 <span style="margin-left: 62px;">Dedicated support</span>
             </div>
@@ -179,7 +179,7 @@ z-index: 3;
         <!---------------------------------------------------->
         
        
-        <%@include  file="Footer.jsp" %>
+        <%@include  file="../layout/footer.jsp" %>
         
         
         

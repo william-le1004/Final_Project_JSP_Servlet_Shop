@@ -3,8 +3,6 @@
     Created on : Aug 11, 2023, 2:04:35 PM
     Author     : Administrator
 --%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -433,15 +431,15 @@
 			</div>
                     
                     
-                  <img class="line" alt="Line" src="../Image/Line 2.png" />
+                  <img class="line" alt="Line" src="../../Image/Line%202.png" />
                   <div class="text-wrapper-9"><button id="button_subcribe">SUBSCRIBE</button></div>
-                  <img class="img" alt="Line" src="../Image/Line 3.png" />
+                  <img class="img" alt="Line" src="../../Image/Line%203.png" />
                 </div>
               </div>
             </div>
           </div>
           <div class="group-10">
-              <img class="line-2" alt="Line" src="../Image/Line 4.png" />
+              <img class="line-2" alt="Line" src="../../Image/Line%204.png" />
             <p class="p">2023 furino. All rights reverved</p>
           </div>
         </div>

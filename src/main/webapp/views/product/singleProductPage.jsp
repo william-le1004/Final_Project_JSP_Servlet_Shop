@@ -13,7 +13,7 @@
            .rectangle{
 height: 100px;
 width: 1440px;
-background-image:url(../Image/Rectangle.png) ;
+background-image:url(../../Image/Rectangle.png) ;
 background-size: cover;
 
 }   
@@ -121,7 +121,7 @@ background-size: cover;
         <title>Single product Page</title>
     </head>
     <body>
-        <%@include file="Header.jsp" %>
+        <%@include file="../layout/header.jsp" %>
         <!------------------------->
         
         <div class="single_product" style="margin-bottom: 100px;">
@@ -130,12 +130,12 @@ background-size: cover;
                  
             <div class="rectangle_text" style="margin-left: 110px;top: 37px;">
             
-                <span> <a href="HomePage.jsp" style="color: #9F9F9F; font-size: 16px;
+                <span> <a href="../user/homePage.jsp" style="color: #9F9F9F; font-size: 16px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;"> Home </a></span>
             <span> > </span>
-            <span> <a href="ShopPage.jsp" style="color: #9F9F9F; font-size: 16px;
+            <span> <a href="shopPage.jsp" style="color: #9F9F9F; font-size: 16px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;" > Shop </a></span>
@@ -151,7 +151,7 @@ line-height: normal;" > Shop </a></span>
         <div class="product_info" style="margin-bottom: 1000px;">
             
             <div class="info_image" style="display: flex;">
-                <img src="../Image/iphone14.webp";
+                <img src="../../Image/iphone14.webp" ;
                      
                      <div class="info_texx">
                          <h1 style="margin-top: 30px"> Iphone 14 Pro Max </h1>
@@ -224,6 +224,6 @@ line-height: normal;" > Shop </a></span>
         
         
         <!------------------------->
-        <%@include file="Footer.jsp" %>
+        <%@include file="../layout/footer.jsp" %>
     </body>
 </html>

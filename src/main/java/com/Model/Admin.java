@@ -3,6 +3,7 @@ package com.Model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * @author Will
@@ -17,7 +18,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Table(name = "ADMIN")
-public class Admin  {
+public class Admin implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int adminID;

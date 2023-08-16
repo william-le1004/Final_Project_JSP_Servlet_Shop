@@ -3,6 +3,7 @@ package com.Model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Set;
 
 /**
@@ -18,7 +19,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Entity
 @Table(name = "CART")
-public class Cart {
+public class Cart implements Serializable {
 
       @Id
       @GeneratedValue(strategy = GenerationType.IDENTITY)

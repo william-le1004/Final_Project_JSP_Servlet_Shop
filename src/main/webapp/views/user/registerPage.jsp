@@ -7,7 +7,7 @@
         <style>
             body {
 	font-family: sans-serif;	
-	background-image: url(../Image/backgound_login.jpg);
+	background-image: url(../../Image/backgound_login.jpg);
 	background-repeat: no-repeat;
 	overflow: hidden;
 	background-size: cover;
@@ -84,7 +84,7 @@
 <body>
  <div class="container">
  	<div class="header">
- 		<h1>LOGIN FORM</h1>
+ 		<h1>RESIGTER FORM</h1>
  	</div>
  	<div class="main">
  		<form>
@@ -98,7 +98,7 @@
  			</span><br>
  				<button>LOGIN</button>
                                 
-                                <a href="ResigterPage.jsp"><p style="color: white; margin-bottom: 20px; text-decoration: none;"> New member ? Resigter here </p> </a>
+                                <a href="LoginPage.html"><p style="color: white; margin-bottom: 20px; text-decoration: none;">Already have account ? Login here</p> </a>
  		</form>
  	</div>
  </div>

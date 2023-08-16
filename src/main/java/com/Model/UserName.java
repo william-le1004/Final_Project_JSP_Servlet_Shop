@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import java.io.Serializable;
 
 /**
  * @author Will
@@ -17,7 +18,7 @@ import javax.persistence.Embeddable;
 @Data
 @NoArgsConstructor
 @Embeddable
-public class UserName {
+public class UserName implements Serializable {
     @Column(name = "FIRST_NAME",length = 20)
     private String firstName;
     @Column(name = "LAST_NAME",length = 20)

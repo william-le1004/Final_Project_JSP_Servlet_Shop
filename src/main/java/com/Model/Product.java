@@ -3,6 +3,7 @@ package com.Model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * @author Will
@@ -17,7 +18,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Table(name = "PRODUCT")
-public class Product {
+public class Product implements Serializable {
 
       @Id
       @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,8 +36,8 @@ public class Product {
       @JoinColumn(name = "Cart_ID_P", nullable = true, referencedColumnName = "Cart_ID")
       private Cart cart;
 
-      //      @OneToOne(mappedBy = "products")
+      //            @OneToOne(mappedBy = "products")
       @OneToOne(cascade = CascadeType.ALL)
-      @JoinColumn(name = "Category_ID", referencedColumnName = "Category_ID")
+      @JoinColumn(name = "Category_Name_P", referencedColumnName = "Category_Name")
       private Category category;
 }
