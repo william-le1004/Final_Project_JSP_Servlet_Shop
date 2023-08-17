@@ -1,7 +1,7 @@
 package com.Controller; /**
  * @author Will
  * @project Final_Project
- * @date 8/16/2023
+ * @date 8/17/2023
  */
 
 import com.DAO.ProductDAO;
@@ -13,14 +13,14 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(name = "HomeController", value = "/home")
-public class HomeController extends HttpServlet {
+@WebServlet(name = "ShopController", value = "/shop")
+public class ShopController extends HttpServlet {
 
       @Override
       protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            ArrayList<Product> productList = ProductDAO.getInstance().selectAll();
-            request.setAttribute("productList",productList);
-            request.getRequestDispatcher("/views/user/homePage.jsp").forward(request,response);
+          ArrayList<Product> productList = ProductDAO.getInstance().selectAll();
+          request.setAttribute("productList",productList);
+          request.getRequestDispatcher("/views/product/shopPage.jsp").forward(request,response);
       }
 
       @Override
