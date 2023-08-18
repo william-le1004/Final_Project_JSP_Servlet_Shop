@@ -1,4 +1,4 @@
-<%-- 
+<%--
     Document   : addProduct
     Created on : Aug 17, 2023, 2:09:32 PM
     Author     : Administrator
@@ -55,8 +55,8 @@
 
 <div class="content">
     <div class="text">
-        <h1>ADD PRODUCT</h1>
-        <h5><a href="AdminPage.jsp" style="color: black; text-decoration: none;"> Home </a> > <a href="addProduct.jsp" style="color: black; text-decoration: none;"> Add product </a></h5>
+        <h1>Update Product</h1>
+        <h5><a href="AdminPage.jsp" style="color: black; text-decoration: none;"> Home </a> > <a href="addProduct.jsp" style="color: black; text-decoration: none;"> Update Product </a></h5>
     </div>
 </div>
 
@@ -71,7 +71,8 @@
                 <div class="form-group">
                     <label for="name" class="col-sm-3 control-label" style="font-weight: bold;">Product name:</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" name="productName" id="name" placeholder="Product Name">
+                        <input type="text" class="form-control" name="productName" id="name" placeholder="Product Name"
+                               value="${product.productName}">
                     </div>
                 </div> <!-- form-group // -->
 
@@ -87,14 +88,16 @@
                 <div class="form-group">
                     <label for="name" class="col-sm-3 control-label" style="font-weight: bold;">Price:</label>
                     <div class="col-sm-9">
-                        <input type="number" class="form-control" name="price" id="name" placeholder="Price">
+                        <input type="number" class="form-control" name="price" id="name" placeholder="Price"
+                               value="${product.productPrice}">
                     </div>
                 </div> <!-- form-group // -->
 
                 <div class="form-group">
                     <label for="name" class="col-sm-3 control-label" style="font-weight: bold;">Quantity:</label>
                     <div class="col-sm-9">
-                        <input type="number" class="form-control" name="quantity" id="name" placeholder="Quantity">
+                        <input type="number" class="form-control" name="quantity" id="name" placeholder="Quantity"
+                               value="${product.quantity}">
                     </div>
 
                     <div class="form-group" style="margin-top: 20px;">
@@ -105,8 +108,6 @@
                         </div>
 
                     </div>
-
-
                     <hr style="margin-left: -59px; ">
 
                     <div class="form-group">

@@ -27,7 +27,7 @@
             position: absolute;
             top: 10px;
             left: 70px;
-            /*z-index: 3;*/
+            z-index: 3;
         }
 
         .text h1 {
@@ -132,6 +132,61 @@
             justify-content: space-between;
             background-color: #FAF3EA;
         }
+        .dropbtn {
+            background-color: #F9F1E7;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .dropbtn:hover, .dropbtn:focus {
+            background-color: #F9F1E7;
+        }
+
+
+        #myInput {
+            box-sizing: border-box;
+            background-image: url('searchicon.png');
+            background-position: 14px 12px;
+            background-repeat: no-repeat;
+            font-size: 16px;
+            padding: 14px 20px 12px 45px;
+            border: none;
+            border-bottom: 1px solid #ddd;
+        }
+
+
+        #myInput:focus {outline: 3px solid #ddd;}
+
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f6f6f6;
+            min-width: 230px;
+            border: 1px solid #ddd;
+            z-index: 1;
+        }
+
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+
+        .dropdown-content a:hover {background-color: #f1f1f1}
+        .show {display:block;}
 
     </style>
 
@@ -154,10 +209,45 @@
 <!---------------------------------------------------->
 
 <div class="group" style="background-color: #F9F1E7;">
-    <div class="div" style="display: flex; margin-left: 98px; margin-bottom: 25px;">
-        <div style="margin-top: 28px;">Filter</div>
-        <img class="system-uicons" alt="System uicons" style="margin-left: 10px; margin-top: 28px; margin-bottom: 0px;"
-             src="./Image/filter_icon.svg"/>
+
+
+
+
+    <div class="div" style="display: flex; margin-left: 98px; margin-bottom: 10px; margin-top: 30px;">
+
+
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn"><img class="system-uicons" style="margin-top: -26px;" alt="System uicons" src="./Image/filter_icon.svg" />
+            </button>
+            <div id="myDropdown" class="dropdown-content">
+                <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                <a href="#about">High → Low Price</a>
+                <a href="#base">Low → High Price</a>
+                <a href="#blog">Phone</a>
+                <a href="#contact">Tablet</a>
+                <a href="#custom">Laptop</a>
+            </div>
+
+            <script>function myFunction() {
+                document.getElementById("myDropdown").classList.toggle("show");
+            }
+
+            function filterFunction() {
+                var input, filter, ul, li, a, i;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                div = document.getElementById("myDropdown");
+                a = div.getElementsByTagName("a");
+                for (i = 0; i < a.length; i++) {
+                    txtValue = a[i].textContent || a[i].innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        a[i].style.display = "";
+                    } else {
+                        a[i].style.display = "none";
+                    }
+                }
+            }</script>
+        </div>
     </div>
 </div>
 <!---------------------------------------------------->
@@ -254,39 +344,5 @@
 <!-------------------Footer---------------------------->
 <%@include file="/views/layout/footer.jsp" %>
 <!-------------------Footer---------------------------->
-<%--filter--%>
-<div class="dropdown">
-    <button onclick="myFunction()" class="dropbtn"><img class="system-uicons" style="margin-top: -26px;" alt="System uicons" src="../Image/filter_icon.svg" />
-    </button>
-    <div id="myDropdown" class="dropdown-content">
-        <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-        <a href="#about">High → Low Price</a>
-        <a href="#base">Low → High Price</a>
-        <a href="#blog">Phone</a>
-        <a href="#contact">Tablet</a>
-        <a href="#custom">Laptop</a>
-    </div>
-
-    <script>function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show");
-    }
-
-    function filterFunction() {
-        var input, filter, ul, li, a, i;
-        input = document.getElementById("myInput");
-        filter = input.value.toUpperCase();
-        div = document.getElementById("myDropdown");
-        a = div.getElementsByTagName("a");
-        for (i = 0; i < a.length; i++) {
-            txtValue = a[i].textContent || a[i].innerText;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                a[i].style.display = "";
-            } else {
-                a[i].style.display = "none";
-            }
-        }
-    }</script>
-</div>
-<%--filter--%>
 </body>
 </html>

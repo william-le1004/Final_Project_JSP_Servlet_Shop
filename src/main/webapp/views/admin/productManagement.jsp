@@ -108,7 +108,8 @@
             <td>$${x.quantity}</td>
             <td>$${x.productPrice}</td>
 <%--            <td><a href="${pageContext.request.contextPath}/editNews?id=${x.id}">Edit</a></td>--%>
-            <td><a class="btn btn-danger" href="${pageContext.request.contextPath}/deleteProduct?id=${x.productID}">Delete</a></td>
+            <td><a class="btn btn-primary" href="${pageContext.request.contextPath}/update?id=${x.productID}">Edit</a></td>
+            <td><a class="btn btn-danger" href="#" onclick="showMessage(${x.productID})">Delete</a></td>
         </tr>
     </c:forEach>
     </tbody>
@@ -116,4 +117,12 @@
 <!--------------------------------------->
 <%@include file="../layout/footer.jsp" %>
 </body>
+<script>
+    function showMessage(id){
+        var option = confirm("Are you sure to delete");
+        if(option===true){
+            window.location.href = 'deleteProduct?id='+id;
+        }
+    }
+</script>
 </html>

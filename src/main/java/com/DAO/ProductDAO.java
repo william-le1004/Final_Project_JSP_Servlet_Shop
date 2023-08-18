@@ -22,26 +22,10 @@ public class ProductDAO implements DAO<Product> {
       }
 
       public static void main(String[] args) {
-            String categoryTmp = "2";
-            int categoryID = Integer.parseInt(categoryTmp);
-            Category c = CategoryDAO.getInstance().doSearch(categoryID);
-            System.out.println(c);
-//            for (Category product : list) {
-//                  System.out.println(p.);
-//            }
-//            int i = 1;
-//            Category category = new Category();
-//            list.forEach(p -> {
-//                  if(p.getCategoryID()== i)
-//                  {
-//                        Product p1 = new Product();
-//                        p1.setProductName("Iphone 14 Pro Black");
-//                        p1.setProductImg("iPhone-14-plus-thumb-den-600x600.jpg");
-//                        p1.setProductPrice(1220.0);
-//                        p1.setQuantity(100);
-////                        p1.setCategory(p.getCategoryID());
-//                  }
-//            });
+//            String categoryTmp = "2";
+//            int categoryID = Integer.parseInt(categoryTmp);
+//            Category c = CategoryDAO.getInstance().doSearch(categoryID);
+//            System.out.println(c);
 //            Product p1 = new Product();
 //            p1.setProductName("Iphone 14 Pro Black");
 //            p1.setProductImg("iPhone-14-plus-thumb-den-600x600.jpg");
@@ -49,12 +33,14 @@ public class ProductDAO implements DAO<Product> {
 //            p1.setQuantity(100);
 //            p1.setCategory(c);
 //            ProductDAO.getInstance().insert(p1);
-//            p1.setCategory(c1);
-//            ProductDAO.getInstance().insert(p1);
+            int exp = 5;
+            String salary = exp == 1 ? "checked" : "unchecked";
+            String salary1 = exp == 1 ? "checked" : exp == 2 ? "checked" : exp == 3 ? "checked" : "unchecked";
+
+            System.out.println(salary1);
 //            Phone();
 //            Tablet();
 //            Laptop();
-//            System.out.println(ProductDAO.getInstance().selectAll());
 ////
       }
 
@@ -232,6 +218,15 @@ public class ProductDAO implements DAO<Product> {
             ArrayList<Product> products = (ArrayList<Product>) query.getResultList();
             session.close();
             return products;
+      }
+
+      public Product selectByID(int id) {
+            Session session = HibernateUltils.getSessionFactory().openSession();
+            Query query = session.createQuery(" from Product p where p.productID =:id");
+            query.setParameter("id",  id );
+            Product product = (Product) query.uniqueResult();
+            session.close();
+            return product;
       }
 
 

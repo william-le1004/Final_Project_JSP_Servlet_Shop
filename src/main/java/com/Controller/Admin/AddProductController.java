@@ -37,11 +37,11 @@ public class AddProductController extends HttpServlet {
 
                   String priceTmp = request.getParameter("price");
                   Double price = Double.parseDouble(priceTmp);
-                  System.out.println(price);
+
 
                   String quantityTmp = request.getParameter("quantity");
                   int quantity = Integer.parseInt(quantityTmp);
-                  System.out.println(quantity);
+
 
                   Category c = CategoryDAO.getInstance().doSearch(categoryID);
                   // Upload Image File
@@ -64,7 +64,11 @@ public class AddProductController extends HttpServlet {
                   product.setQuantity(quantity);
                   product.setProductImg(fileName);
                   ProductDAO.getInstance().insert(product);
-                  System.out.println(categoryID);
+
+                  System.out.println("N" + name);
+                  System.out.println("C" + categoryTmp);
+                  System.out.println("P" + priceTmp);
+                  System.out.println("Q" + quantityTmp);
             } catch (IOException e) {
                   e.printStackTrace();
             } catch (ServletException e) {

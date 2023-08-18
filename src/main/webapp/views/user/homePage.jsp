@@ -195,7 +195,8 @@
                             </div>
                             <div class="item-product__actions actions-product">
                                 <div class="actions-product__body">
-                                    <a class="actions-product__btn btn btn_white" href=""><i class="bi bi-info-circle"></i> View Detail</a>
+                                    <a class="actions-product__btn btn btn_white" href="${pageContext.request.contextPath}/detail?id=${o.productID}&product_name?=${o.productName}">
+                                        <i class="bi bi-info-circle"></i> View Detail</a>
                                     <a class="" href=""><i class="bi bi-emoji-heart-eyes"></i> Like</a>
                                 </div>
                             </div>

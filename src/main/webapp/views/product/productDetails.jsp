@@ -15,7 +15,6 @@
             width: 1440px;
             background-image: url(${pageContext.request.contextPath}/Image/backgound_login.jpg);
             background-size: cover;
-
         }
 
         .info_image img {
@@ -114,7 +113,7 @@
     </style>
 
 
-    <title>Single product Page</title>
+    <title>Product Details</title>
 </head>
 <body>
 <%@include file="../layout/header.jsp" %>
@@ -126,7 +125,7 @@
 
         <div class="rectangle_text" style="margin-left: 110px;top: 37px;">
             
-                <span> <a href="../user/homePage.jsp" style="color: #9F9F9F; font-size: 16px;
+            <span> <a href="../user/homePage.jsp" style="color: #9F9F9F; font-size: 16px;
                 font-style: normal;
                 font-weight: 400;
                 line-height: normal;"> Home </a></span>
@@ -136,7 +135,7 @@
                 font-weight: 400;
                 line-height: normal;"> Shop </a></span>
             <span> | </span>
-            <span> Iphone 14 Pro Max </span>
+            <span> ${product.productName} </span>
 
         </div>
 
@@ -147,20 +146,16 @@
     <div class="product_info" style="margin-bottom: 1000px;">
 
         <div class="info_image" style="display: flex;">
-            <img src="./Image/iphone14.webp"  alt="">
+            <img src="./images/${product.productImg}">
 
             <div class="info_texx">
-                <h1 style="margin-top: 30px"> Iphone 14 Pro Max </h1>
+                <h1 style="margin-top: 30px"> ${product.productName} </h1>
             </div>
 
-
-            <h3 class="info_price" style="margin-top: -180px; margin-left: 470px;">26.000.000 VND</h3>
-
+            <h3 class="info_price" style="margin-top: -180px; margin-left: 470px;"> $${product.productPrice} </h3>
 
             <div class="info_group" style="margin-top: 30px; margin-left: 470px;">
                 <div class="info_text-wrapper">Size</div>
-
-
                 <div class="info_overlap-group-wrapper" style="margin-top: 390px; margin-left: 470px;">
                     <div class="info_overlap-group">
                         <div class="info_div">L</div>
@@ -175,37 +170,18 @@
                     <div class="info_overlap">
                         <div class="info_text-wrapper-3">XS</div>
                     </div>
-
-
                 </div>
-
-
             </div>
-
-
         </div>
-
-
         <!------------------------------------------------------>
-
-
         <div class="quantity" style="display: flex; margin-top: -940px; margin-left: 470px;">
-
             <button style="cursor: pointer; border-radius: 10px;">-</button>
             <div style="margin-left: 20px;">1</div>
             <button style="cursor: pointer; margin-left: 20px; border-radius: 10px;">+</button>
-
-
         </div>
-
-
         <div class="add_to_cart" style="margin-top:-28px; margin-left: 600px;">
-
             <button style="border-radius: 10px; cursor: pointer;">Add to cart</button>
-
         </div>
-
-
     </div>
 
 
