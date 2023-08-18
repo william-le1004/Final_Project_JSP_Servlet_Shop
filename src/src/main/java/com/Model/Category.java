@@ -20,6 +20,7 @@ import java.util.Set;
 @Entity
 @Table(name = "CATEGORY")
 public class Category {
+
       @Id
       @GeneratedValue
       @Column(name = "Category_ID")

@@ -1,8 +1,5 @@
 package com.Model;
 
-import lombok.*;
-
-import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
@@ -19,10 +16,11 @@ import java.sql.Timestamp;
 //@Entity
 //@Table(name = "Order")
 public class Order {
-//      @Id
+
+      //      @Id
 //      @GeneratedValue
 //      @Column(name = "Order_ID")
       private long orderId;
-//      @Column(name = "Order_Date")
+      //      @Column(name = "Order_Date")
       private Timestamp date_created;
 }

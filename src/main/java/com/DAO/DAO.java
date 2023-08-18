@@ -11,12 +11,14 @@ public interface DAO<T> {
 
       public void insert(T t);
 
-      public void update(T t);
+      public void update(int id);
 
-      public void delete(String condition);
+      public void delete(int id);
 
       public ArrayList<T> selectAll();
 
       public ArrayList<T> selectByCondition(String condition);
+
+      public ArrayList<T> selectByTime();
 
 }

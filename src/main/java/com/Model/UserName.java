@@ -19,8 +19,9 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Embeddable
 public class UserName implements Serializable {
-    @Column(name = "FIRST_NAME",length = 20)
-    private String firstName;
-    @Column(name = "LAST_NAME",length = 20)
-    private String lastName;
+
+      @Column(name = "FIRST_NAME", length = 20)
+      private String firstName;
+      @Column(name = "LAST_NAME", length = 20)
+      private String lastName;
 }

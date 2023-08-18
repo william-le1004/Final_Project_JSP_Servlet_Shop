@@ -1,28 +1,47 @@
 package com.DAO;
 
-import com.Data.CategoryDATA;
 import com.Model.Category;
-import com.Model.Product;
 import com.hibernate.HibernateUltils;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Will
  * @project Final_Project
  * @date 8/13/2023
  */
-public class CategoryDAO implements DAO<Category>{
+public class CategoryDAO implements DAO<Category> {
+
       public static CategoryDAO getInstance() {
             return new CategoryDAO();
       }
+
+      public static void main(String[] args) {
+//            Category c1 = new Category();
+//            c1.setCategoryName("Phone");
+//            Category c2 = new Category();
+//            c2.setCategoryName("Tablet");
+//            Category c3 = new Category();
+//            c3.setCategoryName("Laptop");
+//            CategoryDAO.getInstance().insert(c1);
+//            CategoryDAO.getInstance().insert(c2);
+//            CategoryDAO.getInstance().insert(c3);
+//            CategoryDAO.getInstance().doSearch("Phone");
+            System.out.println(CategoryDAO.getInstance().selectAll());
+
+//
+      }
+
       @Override
       public void insert(Category category) {
             Session session = HibernateUltils.getSessionFactory().openSession();
             try {
-                  org.hibernate.Transaction ts = session.beginTransaction();
+                  Transaction ts = session.beginTransaction();
                   session.save(category);
                   ts.commit();
                   System.out.println("Done !!");
@@ -37,49 +56,44 @@ public class CategoryDAO implements DAO<Category>{
       }
 
       @Override
-      public void update(Category category) {
+      public void update(int id) {
 
       }
 
       @Override
-      public void delete(String condition) {
+      public void delete(int id) {
 
       }
 
       @Override
       public ArrayList<Category> selectAll() {
             Session session = HibernateUltils.getSessionFactory().openSession();
-            return (ArrayList<Category>) session.createQuery(" FROM Category c").list();
+            ArrayList<Category> categoryList = (ArrayList<Category>) session.createQuery(" FROM Category c").list();
+            session.close();
+            return categoryList;
       }
 
       @Override
       public ArrayList<Category> selectByCondition(String condition) {
+            Session session = HibernateUltils.getSessionFactory().openSession();
+            Query query = session.createQuery(" FROM Category c WHERE c.categoryName =:u ");
+            query.setParameter("u", condition);
+            Category c = (Category) query.uniqueResult();
+            session.close();
             return null;
       }
 
-      public static void main(String[] args) {
-            Category c1 = new Category();
-            c1.setCategoryName("Phone");
-            Category c2 = new Category();
-            c2.setCategoryName("Tablet");
-            Category c3 = new Category();
-            c3.setCategoryName("Laptop");
-            CategoryDAO.getInstance().insert(c1);
-            CategoryDAO.getInstance().insert(c2);
-            CategoryDAO.getInstance().insert(c3);
+      public Category doSearch(int condition) {
+            Session session = HibernateUltils.getSessionFactory().openSession();
+            Query query = session.createQuery(" FROM Category c WHERE c.categoryID =:u ");
+            query.setParameter("u", condition);
+            Category c = (Category) query.uniqueResult();
+            session.close();
+            return c;
+      }
 
-//            Product p1 = new Product();
-//            p1.setProductName("Iphone 14 Pro Black");
-//            p1.setProductImg("iPhone-14-plus-thumb-den-600x600.jpg");
-//            p1.setProductPrice(1220.0);
-//            p1.setCategory(c1);
-//
-//            Product p2 = new Product();
-//            p2.setProductName("Samsung Galaxy s23 Ultra");
-//            p2.setProductImg("samsung-galaxy-s23-ultra-thumb-xanh-600x600.jpg");
-//            p2.setProductPrice(1500.0);
-//            p2.setCategory(c1);
-
-
+      @Override
+      public ArrayList<Category> selectByTime() {
+            return null;
       }
 }

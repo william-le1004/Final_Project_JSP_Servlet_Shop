@@ -4,7 +4,6 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Set;
 
 /**
  * @author Will
@@ -20,6 +19,7 @@ import java.util.Set;
 @Entity
 @Table(name = "CATEGORY")
 public class Category implements Serializable {
+
       @Id
       @GeneratedValue
       @Column(name = "Category_ID")
@@ -27,9 +27,9 @@ public class Category implements Serializable {
       @Column(name = "Category_Name")
       private String categoryName;
 
-//      @OneToOne(cascade = CascadeType.ALL)
+      //      @OneToOne(cascade = CascadeType.ALL)
 //      @JoinColumn(name = "Product_ID", referencedColumnName = "Product_ID")
-      @OneToOne(mappedBy = "category")
-      private Product products;
+//      @OneToOne(mappedBy = "category")
+//      private Product products;
 
 }

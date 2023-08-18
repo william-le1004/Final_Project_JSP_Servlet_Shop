@@ -7,175 +7,229 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
-        <style>
-            .content {
-height: 316px;
-width: 1440px;
-background-image:url(../../Image/backgound_login.jpg) ;
-background-size: cover;
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-}
-.text {
-color: black;
-position: absolute;
-top: 10px;
-left: 70px;
-z-index: 3;
-}
+    <style>
+        .content {
+            height: 316px;
+            width: 1440px;
+            background-image: url(${pageContext.request.contextPath}/Image/backgound_login.jpg);
+            background-size: cover;
 
-.text h1 {
-    margin-top: 160px;
-    margin-left: 523px;
-}
+        }
+        .text {
+            color: black;
+            position: absolute;
+            top: 10px;
+            left: 70px;
 
-.text h5 {
-    margin-left: 540px;
-}
+        }
 
+        .text h1 {
+            margin-top: 160px;
+            margin-left: 523px;
+            font-weight: bold;
+        }
 
-.quality_box {
-    display: flex;
-    justify-content: space-between;
-    background-color: #FAF3EA;
-}
+        .text h5 {
+            margin-left: 560px;
+        }
 
 
-        </style>
-        
-        
-        <title>Checkout Page</title>
-    </head>
-    <body>
-         <%@include file="../layout/header.jsp" %>
-        <!---------------------------------------------------->
-        
-      
+        .quality_box {
+            display: flex;
+            justify-content: space-between;
+            background-color: #FAF3EA;
+        }
+
+
+    </style>
+
+
+    <title>Checkout Page</title>
+</head>
+<body>
+<%@include file="../layout/header.jsp" %>
+<!---------------------------------------------------->
+
+
 <div class="content">
     <div class="text">
-<h1>CHECK OUT</h1>
-<h5><a href="../user/homePage.jsp" style="color: black; text-decoration: none;"> Home </a> > <a href="checkoutPage.jsp" style="color: black; text-decoration: none;"> Check out </a></h5>
+        <h1>CHECK OUT</h1>
+        <h5><a href="HomePage.jsp" style="color: black; text-decoration: none;"> Home </a> > <a href="CheckoutPage.jsp" style="color: black; text-decoration: none;"> Check out </a></h5>
     </div>
 </div>
-        
-        
-        
-        
-        <!---------------------------------------------->
-        
-        <form action="#" method="post">
-            
-            <div class="both" style="display: flex; margin-bottom: 50px;">            
-            <div class="checkout_form" style="margin-left: 210px; margin-top: 80px;">
-            <h1 style="margin-bottom: 50px;">Billing details</h1>
-            
-            
-            <div class="name" style="display: flex;">
-                
-                <div class=" firstname">
-                    <label for="first-name" style="font-weight: bold;">First Name:</label><br>
-              <input type="text" id="first-name" name="first-name" required style="width: 130px; height: 50px; border-radius: 10px; border-color: #9F9F9F;"><br><br>                        
-                </div>
-              
-  
-  <div class="lastname">
-      <label for="last-name" style="margin-left: 30px; font-weight: bold; ">Last Name:</label><br>
-  <input type="text" id="last-name" name="last-name" required style="width: 130px; height: 50px; border-radius: 10px; margin-left: 30px; border-color: #9F9F9F;"><br><br>
-     
-  </div>
-                
-            </div>
-            
 
-            <label for="company-name" style="font-weight: bold;">Company Name:</label><br>
-  <input type="text" id="company-name" name="company-name" required style="width: 290px; height: 50px; border-radius: 10px; border-color: #9F9F9F;"><br><br>
 
-  <label for="country" style="font-weight: bold;">Country:</label><br>
-  <input type="text" id="country" name="country" required style="width: 290px; height: 50px; border-radius: 10px; border-color: #9F9F9F;"><br><br>
 
-  <label for="street-address" style="font-weight: bold;">Street Address:</label><br>
-  <input type="text" id="street-address" name="street-address" required style="width: 290px; height: 50px; border-radius: 10px; border-color: #9F9F9F;"><br><br>
 
-  <label for="town" style="font-weight: bold;">Town:</label><br>
-  <input type="text" id="town" name="town" required style="width: 290px; height: 50px; border-radius: 10px; border-color: #9F9F9F;"><br><br>
+<!---------------------------------------------->
 
-  <label for="province" style="font-weight: bold;">Province:</label><br>
-  <input type="text" id="province" name="province" required style="width: 290px; height: 50px; border-radius: 10px; border-color: #9F9F9F;"><br><br>
+<div class="container" style="margin-left: 100px;">
 
-  <label for="zip-code" style="font-weight: bold;">Zip Code:</label><br>
-  <input type="text" id="zip-code" name="zip-code" required style="width: 290px; height: 50px; border-radius: 10px; border-color: #9F9F9F;"><br><br>
 
-  <label for="phone" style="font-weight: bold;">Phone:</label><br>
-  <input type="text" id="phone" name="phone" required style="width: 290px; height: 50px; border-radius: 10px; border-color: #9F9F9F;"><br><br>
+    <div class="row" style="margin-top: 50px; margin-bottom: 70px;">
+        <div class="col-md-4 order-md-2 mb-4">
+            <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-muted">Your cart</span>
+                <span class="badge badge-secondary badge-pill">3</span>
+            </h4>
 
-  <label for="email-address" style="font-weight: bold;">Email:</label><br>
-  <input type="email" id="email-address" name="email-address" required style="width: 290px; height: 50px; border-radius: 10px; border-color: #9F9F9F;" ><br><br>
+            <ul class="list-group mb-3">
 
-   </div>
-            
-                <div class="bill" style="margin-left: 180px;">
-  
-                <div class="product-form" style="margin-top: 80px; margin-left: 100px;">
-                    <div class="bill_text" style="display: flex;">
-            <h3>Product</h3>
-            <h3 style="margin-left: 220px;">Subtotal</h3>
+
+                <li class="list-group-item d-flex justify-content-between" style="margin-top: 30px; width: 518px; height: 38px;">
+                    <span>Total (USD)</span>
+                    <strong>$20</strong>
+                </li>
+            </ul>
+
+            <!------------------------------------------------------------------->
+
+            <form class="card p-2">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Promo code">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-secondary">Redeem</button>
                     </div>
-            <h5>In sản phẩm đã mua ở đây !!</h5>
-            
-            
-            
-            
+                </div>
+            </form>
         </div>
-  
-  
-  
-                    <input type="submit" value="Place order" style="width: 300px; height: 64px; border-radius: 10px; 
-                           background-color: white; margin-left: 185px; margin-top: 30px; font-size: 20px; font-weight: bold; cursor: pointer;">
-  </div>
-  
-  </div>
-</form>                     
-           
-           
-        <!---------------------------------------------->
-          <!---------------------------------------------------->
-        
-        <div class="quality_holder" style="background-color:#FAF3EA; height: 300px;">
-            <div class="quality_box" style="background-color:#FAF3EA; vertical-align: central; align-items: center; margin-left: 98px; margin-right: 98px;">
-                <div class="quality_1" style="margin-top: 110px;">
-                <img src="../../Image/trophy%201.svg">
-               
-                <span style="font-weight: bold; margin-top: -0px;">High quality</span></br>
-                <span style="margin-left: 62px;">crafted from top materials</span>
-            </div>
-                
-            
-            <div class="quality_2" style="margin-top: 110px;">
-                <img src="../../Image/guarantee.svg">
-                <span style="font-weight: bold;">Warranty Protection</span></br>
-                <span style="margin-left: 62px;">over 2 years</span>
-            </div>
-            
-            <div class="quality_3" style="margin-top: 110px;">
-                <img src="../../Image/shipping.svg">
-                <span style="font-weight: bold;">Free Shipping</span></br>
-                <span style="margin-left: 62px;">Order over 150 $</span>
-            </div>
-            
-            <div class="quality_4" style="margin-top: 110px;">
-                <img src="../../Image/customer-support.svg">
-                <span style="font-weight: bold;">24 / 7 Support</span></br>
-                <span style="margin-left: 62px;">Dedicated support</span>
-            </div>
+        <div class="col-md-8 order-md-1">
+            <h4 class="mb-3">Billing address</h4>
+            <form class="needs-validation" novalidate>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="firstName">First name</label>
+                        <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                        <div class="invalid-feedback">
+                            Valid first name is required.
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="lastName">Last name</label>
+                        <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                        <div class="invalid-feedback">
+                            Valid last name is required.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email">Email</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">@</span>
+                        </div>
+                        <input type="email" class="form-control" id="email" placeholder="Email" required>
+                        <div class="invalid-feedback" style="width: 100%;">
+                            Your username is required.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="companyName">Company name <span class="text-muted">(Optional)</span></label>
+                    <input type="text" class="form-control" id="email" placeholder="Company name">
+                    <div class="invalid-feedback">
+                        Please enter a valid email address for shipping updates.
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="address">Address</label>
+                    <input type="text" class="form-control" id="address" placeholder="Address" required>
+                    <div class="invalid-feedback">
+                        Please enter your shipping address.
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-md-5 mb-3">
+                        <label for="country">Province</label>
+                        <select class="custom-select d-block w-100" id="country" required>
+                            <option value="">Choose...</option>
+                            <option>United States</option>
+                            <option>Vietnam</option>
+                            <option>Laos</option>
+                            <option>Cambodia</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please select a valid country.
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label for="province">City / County</label>
+                        <select class="custom-select d-block w-100" id="state" required>
+                            <option value="">Choose...</option>
+                            <option>California</option>
+                            <option>New York</option>
+                            <option>Quy Nhon</option>
+                            <option>Ho Chi Minh City</option>
+                            <option>Ha Noi</option>
+                        </select>
+                        <div class="invalid-feedback">
+                            Please provide a valid state.
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="zip">Zip</label>
+                        <input type="text" class="form-control" id="zip" placeholder="" required>
+                        <div class="invalid-feedback">
+                            Zip code required.
+                        </div>
+                    </div>
+                </div>
+                <hr class="mb-4">
+
+
+                <button class="btn btn-primary btn-lg btn-block" type="submit" style="background-color: #B88E2F; border-color: black; color: white; font-weight: bold;">Check out</button>
+            </form>
         </div>
+    </div>
+
+
+</div>
+
+
+
+<!---------------------------------------------->
+<!---------------------------------------------------->
+
+<div class="quality_holder" style="background-color:#FAF3EA; height: 300px;">
+    <div class="quality_box" style="background-color:#FAF3EA; vertical-align: central; align-items: center; margin-left: 98px; margin-right: 98px;">
+        <div class="quality_1" style="margin-top: 110px;">
+            <img src="./Image/trophy 1.svg">
+
+            <span style="font-weight: bold; margin-top: -0px;">High quality</span><br>
+            <span style="margin-left: 62px;">crafted from top materials</span>
         </div>
-        <!---------------------------------------------------->
-        <%@include  file="../layout/footer.jsp" %>
-        
-       
-        
-        
-    </body>
+
+
+        <div class="quality_2" style="margin-top: 110px;">
+            <img src="./Image/guarantee.svg">
+            <span style="font-weight: bold;">Warranty Protection</span><br>
+            <span style="margin-left: 62px;">over 2 years</span>
+        </div>
+
+        <div class="quality_3" style="margin-top: 110px;">
+            <img src="./Image/shipping.svg">
+            <span style="font-weight: bold;">Free Shipping</span><br>
+            <span style="margin-left: 62px;">Order over 150 $</span>
+        </div>
+
+        <div class="quality_4" style="margin-top: 110px;">
+            <img src="./Image/customer-support.svg">
+            <span style="font-weight: bold;">24 / 7 Support</span><br>
+            <span style="margin-left: 62px;">Dedicated support</span>
+        </div>
+    </div>
+</div>
+<!---------------------------------------------------->
+<%@include file="../layout/footer.jsp" %>
+
+</body>
 </html>

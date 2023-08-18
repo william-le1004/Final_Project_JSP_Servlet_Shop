@@ -18,6 +18,10 @@ public class AdminDAO implements DAO<Admin> {
             return new AdminDAO();
       }
 
+      public static void main(String[] args) {
+
+      }
+
       @Override
       public void insert(Admin admin) {
             Session session = HibernateUltils.getSessionFactory().openSession();
@@ -34,10 +38,6 @@ public class AdminDAO implements DAO<Admin> {
                   //   session.flush();
                   session.close();
             }
-      }
-
-      public static void main(String[] args) {
-
       }
 
       @Override

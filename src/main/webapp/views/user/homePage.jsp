@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="./css/style.min.css">
     <link rel="stylesheet" href="./css/style.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="./js/app.js"></script>
 
     <style>
@@ -188,16 +188,15 @@
                         <div class="item-product__body">
                             <div class="item-product__content">
                                 <h5 class="item-product__title">${o.productName}</h5>
-                                <div class="item-product__text">${o.quantity}</div>
+                                <div class="item-product__text">${o.category.categoryName}</div>
                             </div>
                             <div class="item-product__prices">
-                                <div class="item-product__price">${o.productPrice} $</div>
+                                <div class="item-product__price">$${o.productPrice}</div>
                             </div>
                             <div class="item-product__actions actions-product">
                                 <div class="actions-product__body">
-                                    <a class="actions-product__btn btn btn_white" href="">Add to cart</a>
-                                    <a class="actions-product__link _icon-share" href="">Share</a>
-                                    <a class="actions-product__link _icon-favorite" href="">Like</a>
+                                    <a class="actions-product__btn btn btn_white" href=""><i class="bi bi-info-circle"></i> View Detail</a>
+                                    <a class="" href=""><i class="bi bi-emoji-heart-eyes"></i> Like</a>
                                 </div>
                             </div>
                         </div>

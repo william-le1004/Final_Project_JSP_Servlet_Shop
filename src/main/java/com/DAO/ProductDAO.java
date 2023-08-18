@@ -1,11 +1,11 @@
 package com.DAO;
 
-import com.Data.CategoryDATA;
 import com.Model.Category;
 import com.Model.Product;
 import com.hibernate.HibernateUltils;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.util.ArrayList;
@@ -21,59 +21,41 @@ public class ProductDAO implements DAO<Product> {
             return new ProductDAO();
       }
 
-      @Override
-      public void insert(Product product) {
-            Session session = HibernateUltils.getSessionFactory().openSession();
-            try {
-                  org.hibernate.Transaction ts = session.beginTransaction();
-                  session.save(product);
-                  ts.commit();
-                  System.out.println("Done !!");
-                  session.close();
-            } catch (HibernateException e) {
-                  session.getTransaction().rollback();
-                  e.printStackTrace();
-            } finally {
-                  //   session.flush();
-                  session.close();
-            }
-      }
-
-      @Override
-      public void update(Product product) {
-
-      }
-
-      @Override
-      public void delete(String condition) {
-//            Session session = HibernateUltils.getSessionFactory().openSession();
-//            Query query = session.createQuery("delete from Product where productName= :name");
-//            query.setS("name",  + condition + );
-//            ArrayList<Product> products = (ArrayList<Product>) query.getResultList();
-      }
-
-      @Override
-      public ArrayList<Product> selectAll() {
-            Session session = HibernateUltils.getSessionFactory().openSession();
-            return (ArrayList<Product>) session.createQuery(" FROM Product p").list();
-      }
-
-      @Override
-      public ArrayList<Product> selectByCondition(String condition) {
-            Session session = HibernateUltils.getSessionFactory().openSession();
-            Query query = session.createQuery(" from Product p where p.productName like :name");
-            query.setParameter("name", "%" + condition + "%");
-            ArrayList<Product> products = (ArrayList<Product>) query.getResultList();
-            return products;
-      }
-
       public static void main(String[] args) {
-
-
-            Phone();
-            Tablet();
-            Laptop();
-            System.out.println(ProductDAO.getInstance().selectAll());
+            String categoryTmp = "2";
+            int categoryID = Integer.parseInt(categoryTmp);
+            Category c = CategoryDAO.getInstance().doSearch(categoryID);
+            System.out.println(c);
+//            for (Category product : list) {
+//                  System.out.println(p.);
+//            }
+//            int i = 1;
+//            Category category = new Category();
+//            list.forEach(p -> {
+//                  if(p.getCategoryID()== i)
+//                  {
+//                        Product p1 = new Product();
+//                        p1.setProductName("Iphone 14 Pro Black");
+//                        p1.setProductImg("iPhone-14-plus-thumb-den-600x600.jpg");
+//                        p1.setProductPrice(1220.0);
+//                        p1.setQuantity(100);
+////                        p1.setCategory(p.getCategoryID());
+//                  }
+//            });
+//            Product p1 = new Product();
+//            p1.setProductName("Iphone 14 Pro Black");
+//            p1.setProductImg("iPhone-14-plus-thumb-den-600x600.jpg");
+//            p1.setProductPrice(1220.0);
+//            p1.setQuantity(100);
+//            p1.setCategory(c);
+//            ProductDAO.getInstance().insert(p1);
+//            p1.setCategory(c1);
+//            ProductDAO.getInstance().insert(p1);
+//            Phone();
+//            Tablet();
+//            Laptop();
+//            System.out.println(ProductDAO.getInstance().selectAll());
+////
       }
 
       public static void Phone() {
@@ -86,6 +68,7 @@ public class ProductDAO implements DAO<Product> {
             p1.setProductPrice(1220.0);
             p1.setCategory(c1);
             p1.setQuantity(100);
+            p1.getCategory().setCategoryName("Phone");
 
             Product p2 = new Product();
             p2.setProductName("SamSung Galaxy s23 Ultra");
@@ -188,5 +171,72 @@ public class ProductDAO implements DAO<Product> {
             ProductDAO.getInstance().insert(p2);
             ProductDAO.getInstance().insert(p3);
             ProductDAO.getInstance().insert(p4);
+      }
+
+      @Override
+      public void insert(Product product) {
+            Session session = HibernateUltils.getSessionFactory().openSession();
+            try {
+                  org.hibernate.Transaction ts = session.beginTransaction();
+                  session.save(product);
+                  ts.commit();
+                  System.out.println("Done !!");
+                  session.close();
+            } catch (HibernateException e) {
+                  session.getTransaction().rollback();
+                  e.printStackTrace();
+            } finally {
+                  //   session.flush();
+                  session.close();
+            }
+      }
+
+      @Override
+      public void update(int id) {
+
+      }
+
+      @Override
+      public void delete(int id) {
+            Session session = HibernateUltils.getSessionFactory().openSession();
+            try {
+                  Transaction ts = session.beginTransaction();
+                  Query query = session.createQuery("delete from Product p where p.id=:id");
+                  query.setParameter("id", id);
+                  int result = query.executeUpdate();
+                  ts.commit();
+                  System.out.println("Product Delete Status = " + result);
+                  session.close();
+            } catch (HibernateException e) {
+                  session.getTransaction().rollback();
+                  e.printStackTrace();
+            } finally {
+                  //   session.flush();
+                  session.close();
+            }
+      }
+
+      @Override
+      public ArrayList<Product> selectAll() {
+            Session session = HibernateUltils.getSessionFactory().openSession();
+            ArrayList<Product> productsList = (ArrayList<Product>) session.createQuery(" FROM Product p").list();
+            session.close();
+            return productsList;
+      }
+
+      @Override
+      public ArrayList<Product> selectByCondition(String condition) {
+            Session session = HibernateUltils.getSessionFactory().openSession();
+            Query query = session.createQuery(" from Product p where p.productName like :name");
+            query.setParameter("name", "%" + condition + "%");
+            ArrayList<Product> products = (ArrayList<Product>) query.getResultList();
+            session.close();
+            return products;
+      }
+
+
+      @Override
+      public ArrayList<Product> selectByTime() {
+            return null;
       }
 }

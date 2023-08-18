@@ -15,10 +15,46 @@ import java.util.ArrayList;
  * @project Final_Project
  * @date 8/13/2023
  */
-public class ProductDAO implements DAO<Product>{
+public class ProductDAO implements DAO<Product> {
+
       public static ProductDAO getInstance() {
             return new ProductDAO();
       }
+
+      public static void main(String[] args) {
+            Category c1 = new Category();
+            c1.setCategoryName("Phone");
+
+            Product p1 = new Product();
+            p1.setProductName("Iphone 14 Pro Black");
+            p1.setProductImg("iPhone-14-plus-thumb-den-600x600.jpg");
+            p1.setProductPrice(1220.0);
+            p1.setCategory(c1);
+
+            Product p2 = new Product();
+            p2.setProductName("Samsung Galaxy s23 Ultra");
+            p2.setProductImg("samsung-galaxy-s23-ultra-thumb-xanh-600x600.jpg");
+            p2.setProductPrice(1500.0);
+            p2.setCategory(c1);
+
+            Product p3 = new Product();
+            p3.setProductName("Samsung Galaxy Z Fold 5");
+            p3.setProductImg("samsung-galaxy-z-fold5- kem-600x600.jpg");
+            p3.setProductPrice(1300.0);
+            p3.setCategory(c1);
+
+            Product p4 = new Product();
+            p4.setProductName("Iphone 14 Pro Gold");
+            p4.setProductImg("iphone-14-pro-vang-thumb-600x600.jpg");
+            p4.setProductPrice(1399.9);
+            p4.setCategory(c1);
+
+            ProductDAO.getInstance().insert(p1);
+            ProductDAO.getInstance().insert(p2);
+            ProductDAO.getInstance().insert(p3);
+            ProductDAO.getInstance().insert(p4);
+      }
+
       @Override
       public void insert(Product product) {
             Session session = HibernateUltils.getSessionFactory().openSession();
@@ -63,39 +99,5 @@ public class ProductDAO implements DAO<Product>{
             query.setParameter("name", "%" + condition + "%");
             ArrayList<Product> products = (ArrayList<Product>) query.getResultList();
             return products;
-      }
-
-      public static void main(String[] args) {
-            Category c1 = new Category();
-            c1.setCategoryName("Phone");
-
-            Product p1 = new Product();
-            p1.setProductName("Iphone 14 Pro Black");
-            p1.setProductImg("iPhone-14-plus-thumb-den-600x600.jpg");
-            p1.setProductPrice(1220.0);
-            p1.setCategory(c1);
-
-            Product p2 = new Product();
-            p2.setProductName("Samsung Galaxy s23 Ultra");
-            p2.setProductImg("samsung-galaxy-s23-ultra-thumb-xanh-600x600.jpg");
-            p2.setProductPrice(1500.0);
-            p2.setCategory(c1);
-
-            Product p3 = new Product();
-            p3.setProductName("Samsung Galaxy Z Fold 5");
-            p3.setProductImg("samsung-galaxy-z-fold5- kem-600x600.jpg");
-            p3.setProductPrice(1300.0);
-            p3.setCategory(c1);
-
-            Product p4 = new Product();
-            p4.setProductName("Iphone 14 Pro Gold");
-            p4.setProductImg("iphone-14-pro-vang-thumb-600x600.jpg");
-            p4.setProductPrice(1399.9);
-            p4.setCategory(c1);
-
-            ProductDAO.getInstance().insert(p1);
-            ProductDAO.getInstance().insert(p2);
-            ProductDAO.getInstance().insert(p3);
-            ProductDAO.getInstance().insert(p4);
       }
 }

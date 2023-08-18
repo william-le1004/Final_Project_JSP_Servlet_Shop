@@ -38,6 +38,7 @@ public class Product implements Serializable {
 
       //            @OneToOne(mappedBy = "products")
       @OneToOne(cascade = CascadeType.ALL)
-      @JoinColumn(name = "Category_Name_P", referencedColumnName = "Category_Name")
-      private Category category;
+      @JoinColumn(name = "Category_ID_P", referencedColumnName = "Category_ID")
+      private Category category ;
+
 }
