@@ -33,17 +33,32 @@ public class ProductDAO implements DAO<Product> {
 //            p1.setQuantity(100);
 //            p1.setCategory(c);
 //            ProductDAO.getInstance().insert(p1);
-            int exp = 5;
-            String salary = exp == 1 ? "checked" : "unchecked";
-            String salary1 = exp == 1 ? "checked" : exp == 2 ? "checked" : exp == 3 ? "checked" : "unchecked";
-
-            System.out.println(salary1);
+//            int exp = 5;
+//            String salary = exp == 1 ? "checked" : "unchecked";
+//            String salary1 = exp == 1 ? "checked" : exp == 2 ? "checked" : exp == 3 ? "checked" : "unchecked";
+//
+//            System.out.println(salary1);
 //            Phone();
 //            Tablet();
 //            Laptop();
-////
-      }
 
+            ArrayList<Product> p = ProductDAO.getInstance().doPagination(1);
+            p.forEach(System.out::println);
+      }
+      public ArrayList<Product> doPagination(int positionPage){
+            Session session = HibernateUltils.getSessionFactory().openSession();
+            Query query = session.createQuery("FROM Product ");
+            // (position - 1) x 8
+            query.setFirstResult((positionPage - 1)*8);
+            query.setMaxResults(8);
+            return (ArrayList<Product>) query.list();
+      }
+      public Long getTotal(){
+            Session session = HibernateUltils.getSessionFactory().openSession();
+            Long total = (Long) session.createQuery("select count(*) FROM Product p").uniqueResult();
+            session.close();
+            return total;
+      }
       public static void Phone() {
             Category c1 = new Category();
             c1.setCategoryName("Phone");

@@ -26,6 +26,8 @@
         }
 
 
+
+
         .info_group {
             height: 63px;
             left: 0;
@@ -110,6 +112,54 @@
             top: 5px;
         }
 
+        /* - - - - - RATINGS */
+        .rating {
+            position: absolute;
+            width: 150px;
+            height: 30px;
+            padding: auto;
+            border-radius: 30px;
+            background-color: white;
+            display: block;
+            overflow: hidden;
+
+            unicode-bidi: bidi-override;
+            direction: rtl;
+        }
+        .rating:not(:checked) > input {
+            display: none;
+        }
+
+        /* - - - - - RATE */
+        #rate {
+            top: -65px;
+        }
+        #rate:not(:checked) > label {
+            cursor:pointer;
+            float: right;
+            width: 30px;
+            height: 30px;
+            display: block;
+
+            color: rgba(0, 135, 211, .4);
+            line-height: 33px;
+            text-align: center;
+        }
+        #rate:not(:checked) > label:hover,
+        #rate:not(:checked) > label:hover ~ label {
+            color: rgba(0, 135, 211, .6);
+        }
+        #rate > input:checked + label:hover,
+        #rate > input:checked + label:hover ~ label,
+        #rate > input:checked ~ label:hover,
+        #rate > input:checked ~ label:hover ~ label,
+        #rate > label:hover ~ input:checked ~ label {
+            color: #B88E2F;
+        }
+        #rate > input:checked ~ label {
+            color: #B88E2F;
+        }
+
     </style>
 
 
@@ -119,71 +169,102 @@
 <%@include file="../layout/header.jsp" %>
 <!------------------------->
 
-<div class="single_product" style="margin-bottom: 100px;">
-
-    <div class="rectangle">
-
-        <div class="rectangle_text" style="margin-left: 110px;top: 37px;">
-            
-            <span> <a href="../user/homePage.jsp" style="color: #9F9F9F; font-size: 16px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: normal;"> Home </a></span>
-            <span> > </span>
-            <span> <a href="shopPage.jsp" style="color: #9F9F9F; font-size: 16px;
-                font-style: normal;
-                font-weight: 400;
-                line-height: normal;"> Shop </a></span>
-            <span> | </span>
-            <span> ${product.productName} </span>
-
-        </div>
-
-    </div>
-
-    <!---------------------------------------------->
-
-    <div class="product_info" style="margin-bottom: 1000px;">
-
-        <div class="info_image" style="display: flex;">
-            <img src="./images/${product.productImg}">
-
-            <div class="info_texx">
-                <h1 style="margin-top: 30px"> ${product.productName} </h1>
+<main class="mt-5 pt-4" >
+    <div class="container mt-5">
+        <!--Grid row-->
+        <div class="row" style="margin-top: -130px;">
+            <!--Grid column-->
+            <div class="col-md-6 mb-4" >
+                <img src="./images/${product.productImg}" class="img-fluid" alt="" style="width: 300px; margin-top: 20px; margin-left: 40px;"/>
             </div>
+            <!--Grid column-->
 
-            <h3 class="info_price" style="margin-top: -180px; margin-left: 470px;"> $${product.productPrice} </h3>
+            <!--Grid column-->
+            <div class="col-md-6 mb-4">
+                <!--Content-->
+                <div class="p-4">
+                    <div class="mb-3">
+                        <span style="font-size: 24px; font-weight: bold;">${product.productName}</span>
+                    </div>
 
-            <div class="info_group" style="margin-top: 30px; margin-left: 470px;">
-                <div class="info_text-wrapper">Size</div>
-                <div class="info_overlap-group-wrapper" style="margin-top: 390px; margin-left: 470px;">
-                    <div class="info_overlap-group">
-                        <div class="info_div">L</div>
-                    </div>
+                    <p class="lead">
+                        <span style="color: red;">$${product.productPrice}</span>
+                    </p>
+
+                    <!-- RATE -->
+                    <p style="font-weight: bold; font-size: 24px; color: #B88E2F; border: 1px solid #B88E2F; width: 100px; padding: 5px; border-radius: 10px;">RATING</p>
+                    <section id="rate" class="rating" style="margin-top: 247px";>
+                        <!-- FIFTH STAR -->
+                        <input type="radio" id="star_5" name="rate" value="5" />
+                        <label for="star_5" title="Five" style="font-size:30px;">&#9733;</label>
+                        <!-- FOURTH STAR -->
+                        <input type="radio" id="star_4" name="rate" value="4" />
+                        <label for="star_4" title="Four" style="font-size:30px;">&#9733;</label>
+                        <!-- THIRD STAR -->
+                        <input type="radio" id="star_3" name="rate" value="3" />
+                        <label for="star_3" title="Three" style="font-size:30px;">&#9733;</label>
+                        <!-- SECOND STAR -->
+                        <input type="radio" id="star_2" name="rate" value="2" />
+                        <label for="star_2" title="Two" style="font-size:30px;">&#9733;</label>
+                        <!-- FIRST STAR -->
+                        <input type="radio" id="star_1" name="rate" value="1" />
+                        <label for="star_1" title="One" style="font-size:30px;">&#9733;</label>
+                    </section>
+
+                    <form class="d-flex justify-content-left" style="margin-top: 50px;">
+                        <!-- Default input -->
+                        <div class="form-outline me-1" style="width: 52px; margin-right: 25px;">
+                            <input type="number" value="1" class="form-control" style="text-align: center;"/>
+                        </div>
+                        <button class="btn btn-primary ms-1" type="submit" style="background-color: #B88E2F; border-color: #B88E2F;">
+                            Add to cart
+                            <i class="fas fa-shopping-cart ms-1"></i>
+                        </button>
+                    </form>
                 </div>
-                <div class="info_overlap-wrapper" style="margin-top: 390px; margin-left: 470px;">
-                    <div class="info_overlap">
-                        <div class="info_text-wrapper-2">XL</div>
-                    </div>
-                </div>
-                <div class="info_div-wrapper" style="margin-top: 390px; margin-left: 470px;">
-                    <div class="info_overlap">
-                        <div class="info_text-wrapper-3">XS</div>
-                    </div>
-                </div>
+                <!--Content-->
             </div>
+            <!--Grid column-->
         </div>
-        <!------------------------------------------------------>
-        <div class="quantity" style="display: flex; margin-top: -940px; margin-left: 470px;">
-            <button style="cursor: pointer; border-radius: 10px;">-</button>
-            <div style="margin-left: 20px;">1</div>
-            <button style="cursor: pointer; margin-left: 20px; border-radius: 10px;">+</button>
-        </div>
-        <div class="add_to_cart" style="margin-top:-28px; margin-left: 600px;">
-            <button style="border-radius: 10px; cursor: pointer;">Add to cart</button>
-        </div>
-    </div>
+        <!--Grid row-->
 
+        <hr />
+
+        <!--Grid row-->
+        <div class="row d-flex justify-content-center">
+            <!--Grid column-->
+            <div class="col-md-6 text-center">
+                <h4 class="my-4 h4" style="font-weight: bold; font-size: 32px;">RELATED PRODUCTS</h4>
+            </div>
+            <!--Grid column-->
+        </div>
+        <!--Grid row-->
+
+        <!--Grid row-->
+        <div class="row" style="margin-top: 40px; margin-left: 43px; margin-bottom: 100px;">
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-12 mb-4">
+                <a href=""><img src="./Image/macbook_air.jpg" class="img-fluid" alt="" style="width: 200px; height: 200px;" /></a>
+
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <a href=""><img src="./Image/iphone11.jpg" class="img-fluid" alt="" style="width: 200px; height: 200px;" /></a>
+            </div>
+            <!--Grid column-->
+
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <a href=""><img src="./Image/ipad_pro.jpg" class="img-fluid" alt="" style="width: 200px; height: 200px;" /></a>
+            </div>
+            <!--Grid column-->
+        </div>
+        <!--Grid row-->
+    </div>
+</main>
+<!--Main layout-->
 
     <!------------------------->
     <%@include file="../layout/footer.jsp" %>

@@ -3,6 +3,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="./Image/cr7.jpg">
     <link rel="stylesheet" href="./css/style.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
@@ -29,6 +30,12 @@
             color: var(--font-color-1, #666);
         }
 
+        .category{
+            margin-left: 39px;
+            margin-bottom: 30px;
+
+        }
+
         .category_picture {
             display: flex;
             margin-left: 180px;
@@ -52,8 +59,8 @@
             font-weight: 700;
         }
 
-        .title {
-            margin-left: 543px;
+        .title  {
+            margin-left: 600px;
         }
 
         .category_text a {
@@ -64,14 +71,13 @@
         .category_text_1 {
             padding-left: 100px;
             margin-left: 238px;
-            -webkit-transition-duration: 0.4s; /* Safari */
-            transition-duration: 0.4s;
+            -webkit-transition-duration: 0.4s; /* Safari */  transition-duration: 0.4s;
 
 
         }
 
-        .category_text_2 {
-            padding-left: 230px;
+        .category_text_2{
+            padding-left: 220px;
         }
 
         .category_text_3 {
@@ -112,7 +118,8 @@
             height: 100px;
         }
 
-        .show_more_button {
+        .show_more_button
+        {
             margin-top: 50px;
             margin-left: 510px;
         }
@@ -130,6 +137,148 @@
 
         }
 
+
+
+
+
+
+        .container{
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            padding:25px 20px;
+        }
+
+        .container .heading{
+            font-size: 40px;
+            margin-bottom: 20px;
+            color:#334;
+        }
+
+        .container .box-container{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap:20px;
+        }
+
+
+        .container .box-container .box{
+            background-color: #fff;
+            padding:20px;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0,0,0,.2);
+            display: none;
+        }
+
+        .container .box-container .box:nth-child(1),
+        .container .box-container .box:nth-child(2),
+        .container .box-container .box:nth-child(3),
+        .container .box-container .box:nth-child(4){
+            display: inline-block;
+        }
+
+        .container .box-container .box .image{
+            margin-bottom: 20px;
+            overflow: hidden;
+            height: 250px;
+            border-radius: 5px;
+        }
+
+        .container .box-container .box .image img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .container .box-container .box:hover .image img{
+            transform: scale(1.1);
+        }
+
+        .container .box-container .box .content h3{
+            font-size: 20px;
+            color:#334;
+        }
+
+        .container .box-container .box .content p{
+            font-size: 15px;
+            color:#777;
+            line-height: 2;
+            padding:15px 0;
+        }
+
+        .container .box-container .box .content .btn{
+            display: inline-block;
+            padding:10px 30px;
+            border:1px solid #334;
+            color:#334;
+            font-size: 16px;
+        }
+
+        .container .box-container .box .content .btn:hover{
+            background-color: #B88E2F;
+            border-color: #B88E2F;
+            color:#fff;
+        }
+
+        .container .box-container .box .content .icons{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top:1px solid #334;
+        }
+
+        .container .box-container .box .content .icons span{
+            font-size: 14px;
+            color:#777;
+        }
+
+        .container .box-container .box .content .icons span i{
+            color:crimson;
+            padding-right: 5px;
+        }
+
+        #load-more{
+            margin-top: 20px;
+            display: inline-block;
+            padding:13px 30px;
+            border:1px solid #334;
+            color:#334;
+            font-size: 16px;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        #load-more:hover{
+            background-color: crimson;
+            border-color: crimson;
+            color:#fff;
+        }
+
+        @media (max-width:450px){
+
+            .container .heading{
+                font-size: 25px;
+            }
+
+            .container .box-container{
+                grid-template-columns: 1fr;
+            }
+
+            .container .box-container .box .image{
+                height: 200px;
+            }
+
+            .container .box-container .box .content p{
+                font-size: 12px;
+            }
+
+            .container .box-container .box .content .icons span{
+                font-size: 12px;
+            }
+
+        }
     </style>
 
     <title>Home Page</title>
@@ -150,8 +299,7 @@
 
 
 <div class="title">
-    <h2>CATEGORY</h2>
-
+    <h2 style= "margin-top: 20px; font-weight: bold; font-size: 44px; margin-left: -20px;">CATEGORY</h2>
 </div>
 
 <!--------------------------------------------------------------------->
@@ -167,49 +315,63 @@
         <a href="#"><span class="category_text_1">Phone</span></a>
         <a href="#"><span class="category_text_2">Laptop</span></a>
         <a href="#"><span class="category_text_3">Tablet</span></a>
-
     </div>
+</div>
+
+<div class="container" >
 
 
-    <!--------------------------------------------------------------------->
+    <div class="box-container">
+
+        <!------------------------------------------------------>
 
 
-    <section class="page__products products">
-        <div class="products__container _container">
-            <h2 class="products__title _title" style="margin-left: -50px; margin-top: 50px;">OUR PRODUCTS</h2>
-            <div class="products__items">
-                <c:forEach items="${productList}" var="o">
-                    <div class="products__item item-product" data-pid="1">
-                        <a class="item-product__img _ibg" href="">
-                            <picture>
-                                <img src="./images/${o.productImg}" alt="iphone14">
-                            </picture>
-                        </a>
-                        <div class="item-product__body">
-                            <div class="item-product__content">
-                                <h5 class="item-product__title">${o.productName}</h5>
-                                <div class="item-product__text">${o.category.categoryName}</div>
-                            </div>
-                            <div class="item-product__prices">
-                                <div class="item-product__price">$${o.productPrice}</div>
-                            </div>
-                            <div class="item-product__actions actions-product">
-                                <div class="actions-product__body">
-                                    <a class="actions-product__btn btn btn_white" href="${pageContext.request.contextPath}/detail?id=${o.productID}&product_name?=${o.productName}">
-                                        <i class="bi bi-info-circle"></i> View Detail</a>
-                                    <a class="" href=""><i class="bi bi-emoji-heart-eyes"></i> Like</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </c:forEach>
+        <c:forEach items="${productList}" var="o">
+        <div class="box" style="height: 500px;">
+            <div class="image">
+                <img src="./images/${o.productImg}" style="width: 200px; height: 200px; margin-top: 20px;">
             </div>
-            <div class="products__footer">
-                <a class="products__more btn btn_white" href=""
-                   style="border-color: #B88E2F; color: #B88E2F; font-weight: bold;">Show More</a>
+            <div class="content">
+                <h3 style="font-weight: bold">${o.productName}</h3>
+                <p style="margin-top: -14px;">${o.category.categoryName}</p>
+                <p style="margin-top: -40px; color: #B88E2F; font-weight: bold; font-size: 20px;">$${o.productPrice}</p>
+
+                <!-- NHẤN VÀO READ MORE ĐỂ ĐI ĐẾN TRANG DETAIL PAGE CỦA TỪNG SẢN PHẨM NHA -->
+                <a href="${pageContext.request.contextPath}/detail?id=${o.productID}&product_name?=${o.productName}" class="btn" style="font-weight: bold;">
+                    <i class="bi bi-info-circle"></i> Read more </a>
+
             </div>
         </div>
-    </section>
+        </c:forEach>
+
+    </div>
+    <div id="load-more" style="margin-top: 60px; border-radius: 10px; font-weight: bold; color: white; background-color: #B88E2F; border-color: #B88E2F;"> Load more </div>
+
+
+    <script>
+
+        let loadMoreBtn = document.querySelector('#load-more');
+        let currentItem = 4;
+
+        loadMoreBtn.onclick = () =>{
+            let boxes = [...document.querySelectorAll('.container .box-container .box')];
+            for (var i = currentItem; i < currentItem + 4; i++){
+                if( boxes[i] != null){
+                boxes[i].style.display = 'inline-block';
+                }
+            }
+            console.log(currentItem,boxes.length);
+            console.log(loadMoreBtn);
+            currentItem += 4;
+
+            if(currentItem >= boxes.length){
+                loadMoreBtn.style.display = 'none';
+            }
+        }
+
+    </script>
+    <!--------------------------------------------------------------------->
+
 
     <!---------------------------------------------------------->
     <section class="page__furniture furniture" style="margin-bottom: -50px;">

@@ -32,7 +32,7 @@ public class LoginController extends HttpServlet {
                   response.sendRedirect("home");
             }
             else{
-                  request.setAttribute("message","Incorrect Username Or Password");
+                  request.setAttribute("message","Maybe Wrong User Name Or Password");
                   request.getRequestDispatcher("/views/user/loginPage.jsp").forward(request, response);
             }
 

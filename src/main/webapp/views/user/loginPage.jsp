@@ -276,6 +276,9 @@
                 <div class="top">
                     <header style="font-weight: bold;">Sign In</header>
                 </div>
+                <div class="alert alert-danger" style="margin-bottom: 15px;" role="alert">
+                    <p class="text-danger" style="margin-bottom: 15px; color: red; margin-left: 100px;">${message}</p>
+                </div>
                 <div class="input-box" style="margin-bottom: 15px;">
                     <input type="text" class="input-field" placeholder="Username" required autocomplete="off"
                     name="userName">
@@ -304,7 +307,6 @@
         <form method="POST" action="signup" style="margin-top: -50px;">
             <div class="register-container" id="register" style="margin-top: -20px;">
                 <div class="top">
-
                     <header style="font-weight: bold;">Sign Up</header>
                 </div>
                 <div class="two-forms">

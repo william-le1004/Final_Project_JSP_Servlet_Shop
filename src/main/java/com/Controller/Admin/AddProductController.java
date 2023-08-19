@@ -9,6 +9,7 @@ import com.DAO.ProductDAO;
 import com.Model.Category;
 import com.Model.Product;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -20,6 +21,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 @WebServlet(name = "AddProductController", value = "/addProduct")
+@MultipartConfig()
 public class AddProductController extends HttpServlet {
 
       @Override
@@ -57,6 +59,7 @@ public class AddProductController extends HttpServlet {
                         Files.createDirectories(Paths.get(pathUpload));
                   }
                   part.write(pathUpload + "/" + fileName);
+
                   Product product = new Product();
                   product.setProductName(name);
                   product.setCategory(c);
@@ -65,10 +68,6 @@ public class AddProductController extends HttpServlet {
                   product.setProductImg(fileName);
                   ProductDAO.getInstance().insert(product);
 
-                  System.out.println("N" + name);
-                  System.out.println("C" + categoryTmp);
-                  System.out.println("P" + priceTmp);
-                  System.out.println("Q" + quantityTmp);
             } catch (IOException e) {
                   e.printStackTrace();
             } catch (ServletException e) {

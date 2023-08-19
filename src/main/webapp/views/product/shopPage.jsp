@@ -11,7 +11,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="./css/style.min.css">
     <link rel="stylesheet" href="./css/style.css">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
     <style>
         .content {
@@ -132,6 +133,7 @@
             justify-content: space-between;
             background-color: #FAF3EA;
         }
+
         .dropbtn {
             background-color: #F9F1E7;
             color: white;
@@ -158,7 +160,9 @@
         }
 
 
-        #myInput:focus {outline: 3px solid #ddd;}
+        #myInput:focus {
+            outline: 3px solid #ddd;
+        }
 
 
         .dropdown {
@@ -185,8 +189,13 @@
         }
 
 
-        .dropdown-content a:hover {background-color: #f1f1f1}
-        .show {display:block;}
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
+
+        .show {
+            display: block;
+        }
 
     </style>
 
@@ -202,7 +211,8 @@
     <div class="text">
         <h1>SHOP</h1>
         <h5><a href="${pageContext.request.contextPath}/home" style="color: black; text-decoration: none;"> Home </a> >
-            <a href="${pageContext.request.contextPath}/shop" style="color: black; text-decoration: none;"> Shop </a></h5>
+            <a href="${pageContext.request.contextPath}/shop" style="color: black; text-decoration: none;"> Shop </a>
+        </h5>
     </div>
 </div>
 
@@ -211,13 +221,12 @@
 <div class="group" style="background-color: #F9F1E7;">
 
 
-
-
     <div class="div" style="display: flex; margin-left: 98px; margin-bottom: 10px; margin-top: 30px;">
 
 
         <div class="dropdown">
-            <button onclick="myFunction()" class="dropbtn"><img class="system-uicons" style="margin-top: -26px;" alt="System uicons" src="./Image/filter_icon.svg" />
+            <button onclick="myFunction()" class="dropbtn"><img class="system-uicons" style="margin-top: -26px;"
+                                                                alt="System uicons" src="./Image/filter_icon.svg"/>
             </button>
             <div id="myDropdown" class="dropdown-content">
                 <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
@@ -278,37 +287,36 @@
                     </div>
                 </div>
             </c:forEach>
-
         </div>
-
     </div>
 </section>
 
 
 <!---------------------------------------------------->
 
-<div class="frame">
-    <div class="frame_group">
-        <div class="overlap-group">
-            <div class="text-wrapper">1</div>
-        </div>
-    </div>
-    <div class="frame_group">
-        <div class="overlap">
-            <div class="div">2</div>
-        </div>
-    </div>
-    <div class="frame_group">
-        <div class="overlap">
-            <div class="div">3</div>
-        </div>
-    </div>
-    <div class="overlap-wrapper">
-        <div class="div-wrapper">
-            <div class="text-wrapper-2">Next</div>
-        </div>
-    </div>
-</div>
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-end">
+        <c:if test="${tag > 1}">
+            <li class="page-item">
+                <a class="page-link"
+                   href="${pageContext.request.contextPath}/shop?positionPage=${tag-1}">Previous</a>
+            </li>
+        </c:if>
+
+        <c:forEach begin="1" end="${endP}" var="i">
+            <li class="page-item">
+                <a class="page-link ${tag == i ? "active" : ""}"
+                   href="${pageContext.request.contextPath}/shop?positionPage=${i}">${i}</a>
+            </li>
+        </c:forEach>
+
+        <c:if test="${tag < 1}">
+            <li class="page-item">
+                <a class="page-link" href="${pageContext.request.contextPath}/shop?positionPage=${tag+1}">Next</a>
+            </li>
+        </c:if>
+    </ul>
+</nav>
 
 <!---------------------------------------------------->
 

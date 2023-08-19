@@ -1296,7 +1296,7 @@ window.onload = function () {
                 document.querySelector('.cart-header').classList.toggle('_active');
             }
             e.preventDefault();
-        } else if (!targetElement.closest('.cart-header') && !targetElement.classList.contains('actions-product__button')) {
+        } else if (!targetElement.closest('.cart-header') && !targetElement.classList.contains('actions-product__button') && document.querySelector('.cart-header') != null) {
             document.querySelector('.cart-header').classList.remove('_active');
         }
 

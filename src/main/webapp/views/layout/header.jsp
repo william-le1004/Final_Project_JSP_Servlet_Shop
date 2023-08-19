@@ -383,6 +383,7 @@ Author     : Administrator
             <div class="div">
                 <div class="text-wrapper" style="z-index: 10;"><a
                         href="${pageContext.request.contextPath}/home">Home</a></div>
+<%--                <div class="text-wrapper-2"><a href="${pageContext.request.contextPath}/shop?positionPage=1">Shop</a></div>--%>
                 <div class="text-wrapper-2"><a href="${pageContext.request.contextPath}/shop">Shop</a></div>
                 <div class="text-wrapper-3"><a href="${pageContext.request.contextPath}/blog">About</a></div>
                 <div class="text-wrapper-4"><a href="${pageContext.request.contextPath}/contact">Contact</a></div>

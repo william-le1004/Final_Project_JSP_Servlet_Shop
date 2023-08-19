@@ -71,37 +71,40 @@
                 <div class="form-group">
                     <label for="name" class="col-sm-3 control-label" style="font-weight: bold;">Product name:</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" name="productName" id="name" placeholder="Product Name">
+                        <input type="text" class="form-control" name="productName" id="name" placeholder="Product Name"
+                               required autocomplete="off">
                     </div>
                 </div> <!-- form-group // -->
 
                 <div class="form-group" style="margin-left: 15px;">
                     <label class="radio-inline" style="font-weight: bold;">Category:</label>
                     <div class="radio-inline">
-                        <input type="radio" name="category" id="inlineRadio1" value="1"> Phone
-                        <input type="radio" name="category" id="inlineRadio2" value="2"> Tablet
-                        <input type="radio" name="category" id="inlineRadio2" value="3"> Laptop
+                        <input type="radio" name="category" value="1"> Phone
+                        <input type="radio" name="category" value="2"> Tablet
+                        <input type="radio" name="category" value="3"> Laptop
                     </div>
 
                 </div>
                 <div class="form-group">
-                    <label for="name" class="col-sm-3 control-label" style="font-weight: bold;">Price:</label>
+                    <label for="price" class="col-sm-3 control-label" style="font-weight: bold;">Price:</label>
                     <div class="col-sm-9">
-                        <input type="number" class="form-control" name="price" id="name" placeholder="Price">
+                        <input type="number" class="form-control" name="price" id="price" placeholder="Price"
+                               required autocomplete="off">
                     </div>
                 </div> <!-- form-group // -->
 
                 <div class="form-group">
-                    <label for="name" class="col-sm-3 control-label" style="font-weight: bold;">Quantity:</label>
+                    <label for="quantity" class="col-sm-3 control-label" style="font-weight: bold;">Quantity:</label>
                     <div class="col-sm-9">
-                        <input type="number" class="form-control" name="quantity" id="name" placeholder="Quantity">
+                        <input type="number" class="form-control" name="quantity" id="quantity" placeholder="Quantity"
+                               required autocomplete="off">
                     </div>
 
                     <div class="form-group" style="margin-top: 20px;">
-                        <label for="name" class="col-sm-3 control-label" style="font-weight: bold;">Product image:</label>
+                        <label for="file_img" class="col-sm-3 control-label" style="font-weight: bold;">Product image:</label>
                         <div class="col-sm-3">
-                            <label class="control-label small" for="file_img">Upload image (jpg/png):</label>
-                            <input type="file" name="file_img">
+                            <label class="control-label small" id="file_img">Upload image (jpg/png):</label>
+                            <input type="file" name="file_img" required autocomplete="off">
                         </div>
 
                     </div>

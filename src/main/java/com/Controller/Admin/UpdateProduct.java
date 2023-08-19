@@ -13,6 +13,7 @@ import jakarta.servlet.annotation.*;
 import java.io.IOException;
 
 @WebServlet(name = "UpdateProduct", value = "/update")
+@MultipartConfig()
 public class UpdateProduct extends HttpServlet {
 
       @Override
@@ -21,7 +22,8 @@ public class UpdateProduct extends HttpServlet {
             int id = Integer.parseInt(tmpID);
             Product p = ProductDAO.getInstance().selectByID(id);
             request.setAttribute("product", p);
-            request.getRequestDispatcher("/views/admin/updateProduct.jsp").forward(request, response);
+            request.getRequestDispatcher("views/admin/updateProduct.jsp").forward(request,response);
+//            request.getRequestDispatcher("/views/admin/updateProduct.jsp").forward(request, response);
       }
 
       @Override
