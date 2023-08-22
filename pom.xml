@@ -11,8 +11,8 @@
     <packaging>war</packaging>
 
     <properties>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>18</maven.compiler.target>
+        <maven.compiler.source>18</maven.compiler.source>
         <junit.version>5.7.1</junit.version>
     </properties>
 
@@ -35,7 +35,6 @@
             <version>5.4.30.Final</version>
         </dependency>
         <!--        hibernate-->
-
         <!--        jstl-->
         <dependency>
             <groupId>org.glassfish.web</groupId>
@@ -54,6 +53,26 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.33</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/javax.mail/javax.mail-api -->
+        <dependency>
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+
+
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.sun.activation/javax.activation &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.sun.activation</groupId>-->
+<!--            <artifactId>javax.activation</artifactId>-->
+<!--            <version>1.2.0</version>-->
+<!--        </dependency>-->
+
+
+
+
+
     </dependencies>
 
     <build>

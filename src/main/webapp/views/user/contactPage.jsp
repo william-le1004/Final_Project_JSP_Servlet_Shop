@@ -8,12 +8,11 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="icon" href="./Image/cr7.jpg">
     <style>
         .content {
             height: 316px;
-            width: 1440px;
+            width: 100%;
             background-image: url(${pageContext.request.contextPath}/Image/backgound_login.jpg);
             background-size: cover;
 
@@ -24,16 +23,16 @@
             position: absolute;
             top: 10px;
             left: 70px;
-            z-index: 3;
+            /*z-index: 3;*/
         }
 
         .text h1 {
-            margin-top: 160px;
-            margin-left: 530px;
+            margin-top: 200px;
+            margin-left: 600px;
         }
 
         .text h5 {
-            margin-left: 540px;
+            margin-left: 621px;
         }
 
         .quality_box {
@@ -42,15 +41,248 @@
             background-color: #FAF3EA;
         }
 
+
+        #contact {
+            width: 500px;
+            margin:2em auto;
+            background:white;
+            position: relative;
+        }
+        #contact::after {
+            content: "";
+            display: block;
+            height: 30px;
+            width: 90%;
+            left: 5%;
+            bottom: 0;
+            position: absolute;
+            -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.19);
+            box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 100%;
+            z-index: -1;
+        }
+        #contact article {
+            padding: 1em;
+        }
+        #contact h1 {
+            background: #B88E2F;
+            font-family: Oswald ,sans-serif;
+            font-size: 1.75em;
+            padding: 0.6em 0 0.6em 0.4em;
+            color: white;
+            text-shadow: 0 0.06em 0 #424242;
+            position: relative;
+        }
+        .contactbutton {
+            background: #B88E2F;
+            -webkit-box-shadow: 1px 1px 0 0 #832032,2px 2px 0 0 #832032,3px 3px 0 0 #832032;
+            box-shadow: 1px 1px 0 0 #832032,2px 2px 0 0 #832032,3px 3px 0 0 #832032;
+            text-align: center;
+            display: block;
+            width: 100%;
+            height: 50px;
+            margin-top: 20px;
+            margin-bottom: 2px;
+            cursor: pointer;
+        }
+        .contactbutton:hover {
+            -webkit-box-shadow: 1px 1px 0 0 #832032,0px 0px 0 0 #832032,0px 0px 0 0 #832032;
+            box-shadow: 1px 1px 0 0 #832032,0px 0px 0 0 #832032,0px 0px 0 0 #832032;
+            margin-top: 22px;
+            margin-left: 2px;
+            margin-bottom: 0px;
+        }
+        .mail {
+            margin-top: 11px;
+            font-size: 15px;
+            display: inline-block;
+            border-top: 2em solid transparent;
+            border-left: 2.6em solid #832032;
+            height: 0;
+            width: 0;
+            position: relative;
+        }
+        .mail:before {
+            content: '';
+            top: -2.5em;
+            left: -2.95em;
+            display: block;
+            position: absolute;
+            border-top: 1.2em solid #832032;
+            border-left: 1.6em solid transparent;
+            border-right: 1.6em solid transparent;
+            border-bottom: 1em solid transparent;
+            font-size: 0.8em;
+        }
+        .mail::after {
+            display: block;
+            content: "";
+            position: absolute;
+            border-top: 2em solid transparent;
+            border-right: 2.6em solid #832032;
+            height: 0;
+            width: 0;
+            left: -2.18em;
+            bottom: 0;
+        }
+        #checkcontact{
+            position: absolute;
+            left: -9999px;
+        }
+        .contactform {
+            overflow: hidden;
+            max-height: 0px;
+            -webkit-transition: all linear 1s;
+            -moz-transition: all linear 1s;
+            -o-transition: all linear 1s;
+            -ms-transition: all linear 1s;
+            transition: all linear 1s;
+        }
+        #checkcontact:checked + .contactform {
+            max-height: 1000px;
+        }
+        .input_wrapper {
+            position: relative;
+        }
+        .textarea_wrapper textarea {
+            margin-top: 20px;
+            display: block;
+            width: 100%;
+            background: white;
+            border: 1px solid #DADADA;
+            box-shadow: 0 0 1px 0 #E4E4E4;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 1em;
+            -webkit-transition: all 250ms ease;
+            -moz-transition: all 250ms ease;
+            -ms-transition: all 250ms ease;
+            -o-transition: all 250ms ease;
+            transition: all 250ms ease;
+            color: #5E5E5E;
+        }
+        .input_wrapper input[type="text"] {
+            margin-top: 1em;
+            display: block;
+            width: 100%;
+            background: white;
+            border: 1px solid #DADADA;
+            box-shadow: 0 0 1px 0 #E4E4E4;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 1em;
+            -webkit-transition: all 250ms ease;
+            -moz-transition: all 250ms ease;
+            -ms-transition: all 250ms ease;
+            -o-transition: all 250ms ease;
+            transition: all 250ms ease;
+            color: #5E5E5E;
+            text-indent: 15%;
+        }
+        .input_wrapper input[type="text"]:focus {
+            background: rgba(242, 56, 90, 0.05);
+            box-shadow: inset 2px 2px 5px 0 #DADADA;
+            outline: none;
+            text-indent: 0;
+        }
+        .input_wrapper label {
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            background: #F2385A;
+            color: white;
+            font-family: Oswald ,sans-serif;
+            box-sizing: border-box;
+            width: 15%;
+            text-align: center;
+            line-height: 2.8em;
+            -webkit-transition: all 250ms ease;
+            -moz-transition: all 250ms ease;
+            -ms-transition: all 250ms ease;
+            -o-transition: all 250ms ease;
+            transition: all 250ms ease;
+        }
+        .input_wrapper input[type="text"]:focus + label {
+            left: 85%;
+        }
+        .textarea_wrapper textarea {
+            margin-top: 20px;
+            display: block;
+            width: 100%;
+            min-height:150px;
+            background: white;
+            border: 1px solid #DADADA;
+            box-shadow: 0 0 1px 0 #E4E4E4;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            padding: 1em;
+            -webkit-transition: all 250ms ease;
+            -moz-transition: all 250ms ease;
+            -ms-transition: all 250ms ease;
+            -o-transition: all 250ms ease;
+            transition: all 250ms ease;
+            color: #5E5E5E;
+        }
+        .textarea_wrapper textarea:focus {
+            background: white;
+            box-shadow: inset 2px 2px 5px 0 #DADADA;
+            outline: none;
+        }
+        .submit_wrapper {
+            text-align: center;
+        }
+        .submit_wrapper input {
+            text-align: center;
+            display: inline-block;
+            width: 40%;
+            height: 50px;
+            margin-top: 1em;
+            margin-bottom: 6px;
+            cursor: pointer;
+            background: #F2385A;
+            color: white;
+            font-family: Oswald ,sans-serif;
+            font-size: 1em;
+            border: none;
+            -webkit-box-shadow: 1px 1px 0 0 #832032,2px 2px 0 0 #832032,3px 3px 0 0 #832032;
+            box-shadow: 1px 1px 0 0 #832032,2px 2px 0 0 #832032,3px 3px 0 0 #832032;
+            -webkit-appearance: none;
+            -webkit-transition: all 250ms ease;
+            -moz-transition: all 250ms ease;
+            -ms-transition: all 250ms ease;
+            -o-transition: all 250ms ease;
+            transition: all 250ms ease;
+        }
+        .submit_wrapper input:hover {
+            -webkit-box-shadow: 1px 1px 0 0 #832032,0px 0px 0 0 #832032,0px 0px 0 0 #832032;
+            box-shadow: 1px 1px 0 0 #832032,0px 0px 0 0 #832032,0px 0px 0 0 #832032;
+            margin-top: 22px;
+            margin-left: 2px;
+            margin-bottom: 0px;
+        }
+
+        @media (max-width: 500px){
+            #contact {
+                width: 100%;
+            }
+            .input_wrapper label {
+                line-height: 3.5em;
+                font-size: 0.8em;
+            }
+        }
+
     </style>
 
     <title>Contact Page</title>
 </head>
 <body>
 
-<!-------------------Header---------------------------->
+<!--------------------------------------------->
 <%@include file="/views/layout/header.jsp" %>
-<!-------------------Header---------------------------->
 
 <div class="content">
     <div class="text">
@@ -61,76 +293,27 @@
 </div>
 
 <!--------------------------------------->
+<section id="contact">
+    <div class="sectionheader">	<h1 style="text-align: center;">CONTACT US</h1></div>
+    <article>
+        <p style="text-align: center; margin-top: -10px;">FPT University - SE17B_F10 - Group 2</p>
 
-<div class="title">
-    <h3 style="margin-top: 50px; margin-left: 550px; font-size: 32px;">Get in touch with us</h3>
-    <h6 style="margin-top: 30px; color: #9F9F9F; text-align: center; line-height: 40px;">For More Information About Our
-        Product & Services. Please Feel Free To Drop Us<br>An Email. Our Staff Always Be There To Help You Out. Do Not
-        Hesitate !</h6>
-</div>
-<!------------------------------------------>
+        <label for="checkcontact" class="contactbutton"><div class="mail"></div></label><input id="checkcontact" type="checkbox">
 
-<div class="all_content" style="margin-left: 150px; margin-bottom: 100px; display: flex;">
-
-
-    <div class="company_info">
-        <div class="info-icon" style="margin-left: 180px; margin-top: 40px;">
-
-            <div class="company_info_1" style="line-height: 40px;">
-                <img src="./Image/location.svg">
-                <span style="font-weight: bold;">Address</span><br>
-                <span>FPT University Quy Nhon</span>
-            </div>
-
-            <div class="company_info_2" style="line-height: 40px;">
-                <img src="./Image/bxs_phone.svg">
-                <span style="font-weight: bold;">Phone</span><br>
-                <span>0987654321</span>
-            </div>
-
-            <div class="company_info_3" style="line-height: 40px;">
-                <img src="./Image/bi_clock-fill.svg">
-                <span style="font-weight: bold;">Working time</span><br>
-                <span>Coder no leisure :))</span>
-            </div>
-        </div>
-    </div>
-
-
-    <!---------------------------------------------->
-
-
-    <div class="col-md-6 first_col " style=" margin-top: -35px;">
-        <form class="p-4 mt-5" action="#" method="post" style="margin-left: 70px;">
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label" style="font-weight: bold;">Enter your Name</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1">
-            </div>
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label" style="font-weight: bold;">Your Email Address</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1">
-            </div>
-            <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label" style="font-weight: bold;">Subject</label>
-                <textarea  type="text" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-            <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label" style="font-weight: bold;">Enter your massage</label>
-                <textarea  type="text" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-            <div class="mb-3">
-                <button class="btn btn-primary" style="width: 300px; height: 40px; background-color: #B88E2F; color: white; border-color: #B88E2F; font-weight: bold; margin-left: 98px; margin-top: 10px;">Send Now</button>
-            </div>
+        <form action="" method="post" class="contactform">
+            <p class="input_wrapper"><input type="text" name="contact_nom" value=""  id ="contact_nom"><label for="contact_nom" style="background-color: #B88E2F; font-size:
+                                                                                                                              14px;">NAME</label></p>
+            <p class="input_wrapper"><input type="text" name="contact_email" value=""  id ="contact_email"><label for="contact_email" style="background-color: #B88E2F; font-size: 14px;">EMAIL</label></p>
+            <p class="input_wrapper"><input type="text" name="contact_sujet" value=""  id ="contact_sujet"><label for="contact_sujet" style="background-color: #B88E2F; font-size: 14px;">SUBJECT</label></p>
+            <p class="textarea_wrapper"><textarea name="contact_message" id="contact_message"></textarea></p>
+            <p class="submit_wrapper"><input type="submit" value="SEND" style="background-color: #B88E2F;"></p>
         </form>
-
-
-    </div>
-</div>
-
+    </article>
+</section>
 
 <!---------------------------------------------------->
 
-<div class="quality_holder" style="background-color:#FAF3EA; height: 300px;">
+<div class="quality_holder" style="background-color:#FAF3EA; height: 300px; margin-top: 20px;">
     <div class="quality_box"
          style="background-color:#FAF3EA; vertical-align: central; align-items: center; margin-left: 98px; margin-right: 98px;">
         <div class="quality_1" style="margin-top: 110px;">
@@ -160,9 +343,6 @@
     </div>
 </div>
 <!---------------------------------------------------->
-
-
-<!-------------------Footer---------------------------->
 <%@include file="/views/layout/footer.jsp" %>
-<!-------------------Footer---------------------------->
+
 </body>

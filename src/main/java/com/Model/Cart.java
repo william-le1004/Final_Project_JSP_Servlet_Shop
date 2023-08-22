@@ -4,7 +4,8 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Set;
+import java.sql.Timestamp;
+import java.util.List;
 
 /**
  * @author Will
@@ -26,8 +27,14 @@ public class Cart implements Serializable {
       @Column(name = "Cart_ID")
       private int cartID;
 
+      @Column(name = "Quantity")
+      private int quantity;
+
+      @Column(name = "Date")
+      private Timestamp date_create;
+
       @OneToMany(mappedBy = "cart", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-      private Set<Product> items;
+      private List<Item> items;
 
       @OneToOne(mappedBy = "cart")
       private User user;

@@ -1,6 +1,5 @@
 package com.DAO;
 
-import com.Model.Admin;
 import com.hibernate.HibernateUltils;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;

@@ -1,8 +1,6 @@
 package com.DAO;
 
 import com.Data.CategoryDATA;
-import com.Model.Category;
-import com.Model.Product;
 import com.hibernate.HibernateUltils;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;

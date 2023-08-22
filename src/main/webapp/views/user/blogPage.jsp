@@ -9,6 +9,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="./Image/cr7.jpg">
     <style>
 
         .content {

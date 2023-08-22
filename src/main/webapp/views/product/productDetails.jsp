@@ -9,6 +9,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="./Image/cr7.jpg">
     <style>
         .rectangle {
             height: 100px;
@@ -172,28 +173,33 @@
 <main class="mt-5 pt-4" >
     <div class="container mt-5">
         <!--Grid row-->
-        <div class="row" style="margin-top: -130px;">
+        <div class="row" style="margin-top: 0px; display: flex; margin-left: 40px;">
             <!--Grid column-->
             <div class="col-md-6 mb-4" >
-                <img src="./images/${product.productImg}" class="img-fluid" alt="" style="width: 300px; margin-top: 20px; margin-left: 40px;"/>
+                <img src="./images/${product.productImg}" class="img-fluid" alt="" style="width: 300px; margin-top: 20px; margin-left: 40px;border: solid #B88E2F 2px; padding: 5px; border-radius: 10px;"/>
             </div>
             <!--Grid column-->
 
             <!--Grid column-->
             <div class="col-md-6 mb-4">
                 <!--Content-->
-                <div class="p-4">
+                <div class="p-4" style="margin-left: 100px; margin-top: 30px;">
                     <div class="mb-3">
+
                         <span style="font-size: 24px; font-weight: bold;">${product.productName}</span>
+
                     </div>
 
                     <p class="lead">
                         <span style="color: red;">$${product.productPrice}</span>
+
                     </p>
 
                     <!-- RATE -->
-                    <p style="font-weight: bold; font-size: 24px; color: #B88E2F; border: 1px solid #B88E2F; width: 100px; padding: 5px; border-radius: 10px;">RATING</p>
-                    <section id="rate" class="rating" style="margin-top: 247px";>
+
+
+                    <p style="font-weight: bold; font-size: 24px; color: #B88E2F; border: 1px solid #B88E2F; width: 100px; padding: 7px; border-radius: 10px; margin-top: 40px">RATING</p>
+                    <section id="rate" class="rating" style="margin-top: 370px;">
                         <!-- FIFTH STAR -->
                         <input type="radio" id="star_5" name="rate" value="5" />
                         <label for="star_5" title="Five" style="font-size:30px;">&#9733;</label>
@@ -211,16 +217,20 @@
                         <label for="star_1" title="One" style="font-size:30px;">&#9733;</label>
                     </section>
 
+
                     <form class="d-flex justify-content-left" style="margin-top: 50px;">
                         <!-- Default input -->
-                        <div class="form-outline me-1" style="width: 52px; margin-right: 25px;">
-                            <input type="number" value="1" class="form-control" style="text-align: center;"/>
+                        <div class="form-outline me-1" style="width: 20px; margin-right: 25px;">
+                            <input type="number" value="1" class="form-control" style="text-align: center; width: 50px; height: 30px; border-radius: 10px; font-size: 24px; margin-left: 26px; margin-top: 20px;"/>
                         </div>
-                        <button class="btn btn-primary ms-1" type="submit" style="background-color: #B88E2F; border-color: #B88E2F;">
-                            Add to cart
-                            <i class="fas fa-shopping-cart ms-1"></i>
+                        <button class="btn btn-primary ms-1" type="submit" style="background-color: #B88E2F; border-color: #B88E2F; width: 200px; height: 40px; margin-top: 40px; border-radius: 10px;">
+                            <a href="${pageContext.request.contextPath}/addCart?id=${product.productID}&action=addCart" class="btn" style="font-weight: bold; color: white; text-decoration: none; font-size: 16px;">
+                                Add to cart
+                                <i class="fas fa-shopping-cart ms-1"></i> </a>
                         </button>
                     </form>
+<%--                                        <a href="${pageContext.request.contextPath}/addCart?id=${product.productID}" class="btn" style="font-weight: bold;">--%>
+<%--                                            <i class="bi bi-info-circle"></i> Read more </a>--%>
                 </div>
                 <!--Content-->
             </div>
@@ -234,14 +244,14 @@
         <div class="row d-flex justify-content-center">
             <!--Grid column-->
             <div class="col-md-6 text-center">
-                <h4 class="my-4 h4" style="font-weight: bold; font-size: 32px;">RELATED PRODUCTS</h4>
+                <h4 class="my-4 h4" style="font-weight: bold; font-size: 32px; margin-left: 360px;">RELATED PRODUCTS</h4>
             </div>
             <!--Grid column-->
         </div>
         <!--Grid row-->
 
         <!--Grid row-->
-        <div class="row" style="margin-top: 40px; margin-left: 43px; margin-bottom: 100px;">
+        <div class="row" style="margin-top: 40px; margin-left: 260px; margin-bottom: 100px; display: flex;">
             <!--Grid column-->
             <div class="col-lg-4 col-md-12 mb-4">
                 <a href=""><img src="./Image/macbook_air.jpg" class="img-fluid" alt="" style="width: 200px; height: 200px;" /></a>

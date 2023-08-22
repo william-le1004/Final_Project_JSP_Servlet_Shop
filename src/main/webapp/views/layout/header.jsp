@@ -4,13 +4,9 @@ Created on : Aug 11, 2023, 2:13:11 PM
 Author     : Administrator
 --%>
 
-<!DOCTYPE html>
-<html>
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-          integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="icon" href="./Image/cr7.jpg">
     <style>
 
         * {
@@ -21,8 +17,8 @@ Author     : Administrator
         .header {
             background-color: #ffffff;
             height: 100px;
-            width: 1440px;
-            z-index: 10;
+            width: 100%;
+            z-index: 3;
         }
 
         .header .group {
@@ -30,7 +26,7 @@ Author     : Administrator
             left: 54px;
             position: relative;
             top: 29px;
-            width: 1286px;
+            width: 100%;
         }
 
         .header .overlap-group {
@@ -106,10 +102,10 @@ Author     : Administrator
 
         .header .group-2 {
             height: 41px;
-            z-index: 1;
+
             position: absolute;
             top: 0;
-            width: 1286px;
+            width: 100%;
         }
 
         .header .mdi-account-alert {
@@ -217,6 +213,12 @@ Author     : Administrator
             text-decoration: none;
             margin-top: -13px;
             margin-left: -2px;
+        }
+
+
+        a:hover {
+
+            color: #B88E2F;
         }
 
 
@@ -371,157 +373,78 @@ Author     : Administrator
             margin: 0 10px;
         }
     </style>
-
     <title>Header</title>
 </head>
 
 <%--fix path--%>
 <body>
-<div class="header">
-    <div class="group">
-        <div class="overlap-group">
-            <div class="div">
-                <div class="text-wrapper" style="z-index: 10;"><a
+<div style="width: 95%;  height: 100px;">
+    <div class="header">
+        <div class="group">
+            <div class="div" style="margin-left: -140px;">
+                <%
+                    if(request.getSession().getAttribute("uName")!=null){ %>
+                <div class="text-wrapper" style="margin-left: -150px;margin-top: -12px;"><p>Welcome ${sessionScope.uName}</p></div>
+                <% }%>
+
+                <div class="text-wrapper" style="z-index: 10; margin-top: 3px; margin-left: 30px;"><a
                         href="${pageContext.request.contextPath}/home">Home</a></div>
-<%--                <div class="text-wrapper-2"><a href="${pageContext.request.contextPath}/shop?positionPage=1">Shop</a></div>--%>
-                <div class="text-wrapper-2"><a href="${pageContext.request.contextPath}/shop">Shop</a></div>
-                <div class="text-wrapper-3"><a href="${pageContext.request.contextPath}/blog">About</a></div>
-                <div class="text-wrapper-4"><a href="${pageContext.request.contextPath}/contact">Contact</a></div>
+                <div class="text-wrapper-2" style="margin-left: -18px; margin-top: 3px"><a
+                        href="${pageContext.request.contextPath}/shop">Shop</a></div>
+                <div class="text-wrapper-3" style="margin-left: -70px; margin-top: 3px; "><a
+                        href="${pageContext.request.contextPath}/blog">About</a></div>
+                <div class="text-wrapper-4" style="margin-left: -120px; margin-top: 3px; "><a
+                        href="${pageContext.request.contextPath}/contact">Contact</a></div>
+                <%
+                    if(request.getSession().getAttribute("uName")==null){ %>
+                <div class="text-wrapper-4" style="margin-left: -20px; margin-top: 3px; "><a
+                        href="${pageContext.request.contextPath}/login">Log in</a></div>
+                <% }else{ %>
+                <div class="text-wrapper-4" style="margin-left: 0px; margin-top: 3px;"><a
+                        href="${pageContext.request.contextPath}/logout">Log out</a></div>
+                <% }
+
+                %>
             </div>
 
 
             <div class="group-2">
-                <a href="${pageContext.request.contextPath}/login"><img class="mdi-account-alert"
-                                                                        alt="Mdi account alert"
-                                                                        src="./Image/mdi-account-alert-outline.svg"/></a>
 
-                <div class="d-flex justify-content-center h-100" style="margin-top: -17px;">
-                    <form class="searchbar" action="search" method="post">
-                        <input class="search_input" type="text" name="searchResult" placeholder="Search..." required
-                               autocomplete="off">
-                        <button class="search-btn" type="submit">
-                            <img src="./Image/akar-icons-search.svg" alt="">
+                <form class="input-group" action="search" method="post" style="margin-left: 910px;">
+                    <div style="display: flex;">
+                        <div class="form-outline">
+                            <input type="search" name="searchResult" id="form1" class="form-control" placeholder="Search..."
+                                   style="width: 300px; height: 36px;  border-radius: 5px; margin-right: 10px;margin-left: -100px;"/>
+                        </div>
+                        <button type="button" class="btn btn-primary"
+                                style="width: 40px; height: 36px; margin-left: 0px; background-color: #B88E2F; border-color: #B88E2F;  border-radius: 5px; cursor: pointer;">
+                            <i class="bi bi-binoculars"></i>
                         </button>
-                    </form>
-                </div>
+                    </div>
+                </form>
+
+
+                <!------------------------------------------------------------------->
 
 
                 <a href="./views/product/wishListPage.jsp"><img class="akar-icons-heart" alt="Akar icons heart"
                                                                 src="./Image/akar-icons-heart.svg"/></a>
-                <img class="ant-design-shopping" alt="Ant design shopping"
-                     src="./Image/ant-design-shopping-cart-outlined.svg"/>
+                <a href="${pageContext.request.contextPath}/addCart"><img class="ant-design-shopping" alt="Ant design shopping"
+                                        src="./Image/ant-design-shopping-cart-outlined.svg" style="margin-left: -30px;"/></a>
 
 
-                <div class="frame_header">
+                <div class="frame_header" style="width: 7%;">
                     <a href="${pageContext.request.contextPath}/home"><img class="meubel-house-logos"
                                                                            alt="Meubel house logos"
                                                                            src="./Image/meubel-house-logos-05.png"/></a>
                     <a href="${pageContext.request.contextPath}/home"><img class="skin-clinic" alt="Skin clinic"
                                                                            src="./Image/skin-clinic.png"/></a>
                 </div>
+
             </div>
         </div>
     </div>
 </div>
 
 
-<div class="container">
-
-
-    <div class="list">
-
-    </div>
-</div>
-<div class="card">
-    <h1 style="color: black;">Card</h1>
-    <ul class="listCard">
-    </ul>
-    <div class="checkOut">
-        <div class="total" style="color: #F9F1E7;">0</div>
-        <div class="closeShopping">Close</div>
-    </div>
-</div>
-
-<script>
-    let openShopping = document.querySelector('.ant-design-shopping');
-    let closeShopping = document.querySelector('.closeShopping');
-    let list = document.querySelector('.list');
-    let listCard = document.querySelector('.listCard');
-    let body = document.querySelector('body');
-    let total = document.querySelector('.total');
-    let quantity = document.querySelector('.quantity');
-
-    openShopping.addEventListener('click', () => {
-        body.classList.add('active');
-    })
-    closeShopping.addEventListener('click', () => {
-        body.classList.remove('active');
-    })
-
-    let products = [];
-    let listCards = [];
-
-    function initApp() {
-        products.forEach((value, key) => {
-            let newDiv = document.createElement('div');
-            newDiv.classList.add('item');
-            newDiv.innerHTML = `
-            <img src="image/${value.image}">
-            <div class="title">${value.name}</div>
-            <div class="price">${value.price.toLocaleString()}</div>
-            <button onclick="addToCard(${key})">Add To Card</button>`;
-            list.appendChild(newDiv);
-        })
-    }
-
-    initApp();
-
-    function addToCard(key) {
-        if (listCards[key] == null) {
-            // copy product form list to list card
-            listCards[key] = JSON.parse(JSON.stringify(products[key]));
-            listCards[key].quantity = 1;
-        }
-        reloadCard();
-    }
-
-    function reloadCard() {
-        listCard.innerHTML = '';
-        let count = 0;
-        let totalPrice = 0;
-        listCards.forEach((value, key) => {
-            totalPrice = totalPrice + value.price;
-            count = count + value.quantity;
-            if (value != null) {
-                let newDiv = document.createElement('li');
-                newDiv.innerHTML = `
-                <div><img src="image/${value.image}"/></div>
-                <div>${value.name}</div>
-                <div>${value.price.toLocaleString()}</div>
-                <div>
-                    <button onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
-                    <div class="count">${value.quantity}</div>
-                    <button onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
-                </div>`;
-                listCard.appendChild(newDiv);
-            }
-        })
-        total.innerText = totalPrice.toLocaleString();
-        quantity.innerText = count;
-    }
-
-    function changeQuantity(key, quantity) {
-        if (quantity == 0) {
-            delete listCards[key];
-        } else {
-            listCards[key].quantity = quantity;
-            listCards[key].price = quantity * products[key].price;
-        }
-        reloadCard();
-    }
-</script>
-
 </body>
-
-
-</html>

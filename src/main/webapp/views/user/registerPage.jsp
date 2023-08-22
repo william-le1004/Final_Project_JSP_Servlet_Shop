@@ -2,7 +2,8 @@
 <html>
 <head>
     <title>Resigter Page</title>
-    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">
+<%--    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">--%>
+    <link rel="icon" href="./Image/cr7.jpg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <style>

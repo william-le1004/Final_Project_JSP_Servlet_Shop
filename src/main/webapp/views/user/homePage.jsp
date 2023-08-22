@@ -4,14 +4,15 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="icon" href="./Image/cr7.jpg">
-    <link rel="stylesheet" href="./css/style.min.css">
-    <link rel="stylesheet" href="./css/style.css">
+<%--    <link rel="stylesheet" href="./css/style.min.css">--%>
+<%--    <link rel="stylesheet" href="./css/style.css">--%>
+    <link rel="icon" href="./Image/cr7.jpg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <script src="./js/app.js"></script>
 
     <style>
         .title h1 {
-            border: 0 none;
+            border: 0px none;
             height: 48px;
             width: 300px;
 
@@ -289,34 +290,20 @@
 <!-------------------Header---------------------------->
 <%@include file="/views/layout/header.jsp" %>
 <!-------------------Header---------------------------->
-
-
-<div class="banner" style="margin-top: 100px; margin-bottom: 30px;">
-    <img src="${pageContext.request.contextPath}/Image/banner.jpg" alt="">
-</div>
+<div style="width: 100%;">
+    <div class="banner" style="margin-top: 100px; margin-bottom: 30px;">
+        <img src="${pageContext.request.contextPath}/Image/banner2.jpg" style="width: 100%;margin-top: -60px;" alt="">
+    </div>
 
 <!----------END BANNER------------------------------------------------------------->
 
 
 <div class="title">
-    <h2 style= "margin-top: 20px; font-weight: bold; font-size: 44px; margin-left: -20px;">CATEGORY</h2>
+    <h2 style= "margin-top: 20px; font-weight: bold; font-size: 44px; margin-left: 27px;">Product</h2>
 </div>
 
 <!--------------------------------------------------------------------->
 
-<div class="category">
-    <div class="category_picture">
-        <a href="#"><img src="./Image/phone_cate.jpg"></a>
-        <a href="#"><img src="./Image/laptop_cate.jpg"></a>
-        <a href="#"><img src="./Image/tablet_cate.jpg"></a>
-    </div>
-
-    <div class="category_text">
-        <a href="#"><span class="category_text_1">Phone</span></a>
-        <a href="#"><span class="category_text_2">Laptop</span></a>
-        <a href="#"><span class="category_text_3">Tablet</span></a>
-    </div>
-</div>
 
 <div class="container" >
 
@@ -374,78 +361,128 @@
 
 
     <!---------------------------------------------------------->
-    <section class="page__furniture furniture" style="margin-bottom: -50px;">
+    <section class="page__furniture furniture"
+             style="margin-bottom: -50px; margin-top: 100px;">
         <div class="furniture__container">
 
-            <h2 class="furniture__title _title" style="margin-top: 20px;">RELATED SHOP</h2>
-            <div class="furniture__label">Furniture shop</div>
+            <h2 class="furniture__title _title"
+                style="margin-top: 20px; font-size: 44px; font-weight: bold;">RELATED
+                SHOP</h2>
+            <div class="furniture__label"
+                 style="font-size: 38px; margin-bottom: 48px;">Furniture
+                shop</div>
             <div class="furniture__body" data-speed="0.01">
-                <div class="furniture__items _gallery">
+                <div class="furniture__items _gallery"
+                     style="margin-bottom: 70px;">
                     <div class="furniture__column">
-                        <div class="furniture__row row-furniture row-furniture_left-top">
-                            <a class="row-furniture__item" href="img/furniture/09.jpg">
+                        <div
+                                class="furniture__row row-furniture row-furniture_left-top">
+                            <a class="row-furniture__item"
+                               href="img/furniture/09.jpg">
                                 <picture>
-                                    <img src="./img/furniture/09.jpg?_v=1630043180668" alt="image"></picture>
+                                    <img
+                                            src="./img/furniture/09.jpg?_v=1630043180668"
+                                            alt="image"></picture>
                             </a>
-                            <a class="row-furniture__item" href="./img/furniture/01.jpg">
+                            <a class="row-furniture__item"
+                               href="./img/furniture/01.jpg">
                                 <picture>
-                                    <img src="./img/furniture/01.jpg?_v=1630043180668" alt="image"></picture>
+                                    <img
+                                            src="./img/furniture/01.jpg?_v=1630043180668"
+                                            alt="image"></picture>
                             </a>
-                            <a class="row-furniture__item" href="./img/furniture/02.jpg">
+                            <a class="row-furniture__item"
+                               href="./img/furniture/02.jpg">
                                 <picture>
-                                    <img src="./img/furniture/02.jpg?_v=1630043180668" alt="image"></picture>
+                                    <img
+                                            src="./img/furniture/02.jpg?_v=1630043180668"
+                                            alt="image"></picture>
                             </a>
                         </div>
-                        <div class="furniture__row row-furniture row-furniture_left-bottom">
-                            <a class="row-furniture__item" href="./img/furniture/04.jpg">
+                        <div
+                                class="furniture__row row-furniture row-furniture_left-bottom">
+                            <a class="row-furniture__item"
+                               href="./img/furniture/04.jpg">
                                 <picture>
-                                    <img src="./img/furniture/04.jpg?_v=1630043180668" alt="image"></picture>
+                                    <img
+                                            src="./img/furniture/04.jpg?_v=1630043180668"
+                                            alt="image"></picture>
                             </a>
-                            <a class="row-furniture__item" href="./img/furniture/06.jpg">
+                            <a class="row-furniture__item"
+                               href="./img/furniture/06.jpg">
                                 <picture>
-                                    <img src="./img/furniture/06.jpg?_v=1630043180668" alt="image"></picture>
+                                    <img
+                                            src="./img/furniture/06.jpg?_v=1630043180668"
+                                            alt="image"></picture>
                             </a>
-                            <a class="row-furniture__item" href="./img/furniture/07.jpg">
+                            <a class="row-furniture__item"
+                               href="./img/furniture/07.jpg">
                                 <picture>
-                                    <img src="./img/furniture/07.jpg?_v=1630043180668" alt="image"></picture>
+                                    <img
+                                            src="./img/furniture/07.jpg?_v=1630043180668"
+                                            alt="image"></picture>
                             </a>
                         </div>
                     </div>
                     <div class="furniture__column">
-                        <div class="furniture__row row-furniture row-furniture_center">
-                            <a class="row-furniture__item" href="./img/furniture/03.jpg">
+                        <div
+                                class="furniture__row row-furniture row-furniture_center">
+                            <a class="row-furniture__item"
+                               href="./img/furniture/03.jpg">
                                 <picture>
-                                    <img src="./img/furniture/03.jpg?_v=1630043180668" alt="image"></picture>
+                                    <img
+                                            src="./img/furniture/03.jpg?_v=1630043180668"
+                                            alt="image"></picture>
                             </a>
                         </div>
                     </div>
                     <div class="furniture__column">
-                        <div class="furniture__row row-furniture row-furniture_right-top">
-                            <a class="row-furniture__item" href="./img/furniture/04.jpg">
+                        <div
+                                class="furniture__row row-furniture row-furniture_right-top">
+                            <a class="row-furniture__item"
+                               href="./img/furniture/04.jpg">
                                 <picture>
-                                    <img src="./img/furniture/04.jpg?_v=1630043180668" alt="image"></picture>
+                                    <img
+                                            src="./img/furniture/04.jpg?_v=1630043180668"
+                                            alt="image"></picture>
                             </a>
-                            <a class="row-furniture__item" href="./img/furniture/05.jpg">
+                            <a class="row-furniture__item"
+                               href="./img/furniture/05.jpg">
                                 <picture>
-                                    <img src="./img/furniture/05.jpg?_v=1630043180668" alt="image"></picture>
+                                    <img
+                                            src="./img/furniture/05.jpg?_v=1630043180668"
+                                            alt="image"></picture>
                             </a>
-                            <a class="row-furniture__item" href="./img/furniture/01.jpg">
+                            <a class="row-furniture__item"
+                               href="./img/furniture/01.jpg">
                                 <picture>
-                                    <img src="./img/furniture/01.jpg?_v=1630043180668" alt="image"></picture>
+                                    <img
+                                            src="./img/furniture/01.jpg?_v=1630043180668"
+                                            alt="image"></picture>
                             </a>
                         </div>
-                        <div class="furniture__row row-furniture row-furniture_right-bottom">
-                            <a class="row-furniture__item" href="./img/furniture/08.jpg">
+                        <div
+                                class="furniture__row row-furniture row-furniture_right-bottom">
+                            <a class="row-furniture__item"
+                               href="./img/furniture/08.jpg">
                                 <picture>
-                                    <img src="./img/furniture/08.jpg?_v=1630043180668" alt="image"></picture>
+                                    <img
+                                            src="./img/furniture/08.jpg?_v=1630043180668"
+                                            alt="image"></picture>
                             </a>
-                            <a class="row-furniture__item" href="./img/furniture/09.jpg">
+                            <a class="row-furniture__item"
+                               href="./img/furniture/09.jpg">
                                 <picture>
-                                    <img src="./img/furniture/09.jpg?_v=1630043180668" alt="image"></picture>
+                                    <img
+                                            src="./img/furniture/09.jpg?_v=1630043180668"
+                                            alt="image"></picture>
                             </a>
-                            <a class="row-furniture__item" href="./img/furniture/06.jpg">
+                            <a class="row-furniture__item"
+                               href="./img/furniture/06.jpg">
                                 <picture>
-                                    ><img src="./img/furniture/06.jpg?_v=1630043180668" alt="image"></picture>
+                                    ><img
+                                        src="./img/furniture/06.jpg?_v=1630043180668"
+                                        alt="image"></picture>
                             </a>
                         </div>
                     </div>
@@ -453,7 +490,8 @@
             </div>
         </div>
     </section>
-
+</div>
+</div>
     <!-------------------Footer---------------------------->
     <%@include file="/views/layout/footer.jsp" %>
     <!-------------------Footer---------------------------->

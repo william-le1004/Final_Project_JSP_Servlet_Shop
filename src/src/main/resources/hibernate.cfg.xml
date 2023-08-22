@@ -13,7 +13,7 @@
         <property name="show_sql">true</property>
         <mapping class="com.Model.User"/>
         <mapping class="com.Model.Admin"/>
-        <mapping class="com.Model.Cart"/>
+        <mapping class="com.Model.Order"/>
         <mapping class="com.Model.Category"/>
         <mapping class="com.Model.Order"/>
         <mapping class="com.Model.Product"/>

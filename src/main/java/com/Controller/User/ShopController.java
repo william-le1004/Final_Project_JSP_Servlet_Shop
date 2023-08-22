@@ -20,6 +20,9 @@ public class ShopController extends HttpServlet {
 
       @Override
       protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//            if(request.getParameter("action")==null){
+//
+//            }
             String positionPage = request.getParameter("positionPage");
 
             if (positionPage == null) {
@@ -29,7 +32,7 @@ public class ShopController extends HttpServlet {
 
             Long total = ProductDAO.getInstance().getTotal();
             int endPage = (int) (total / 8);
-            if (total % 3 != 0) {
+            if (total % 8 != 0) {
                   endPage++;
             }
             ArrayList<Product> productList = ProductDAO.getInstance().doPagination(position);

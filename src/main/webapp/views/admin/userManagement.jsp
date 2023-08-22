@@ -41,7 +41,7 @@
     </style>
 
 
-    <title>Product Management</title>
+    <title>User Management</title>
 </head>
 <body>
 
@@ -55,8 +55,8 @@
         <h1>PRODUCT MANAGEMENT</h1>
         <h5><a href="${pageContext.request.contextPath}/admin" style="color: black; text-decoration: none;"> Admin
             Home </a> >
-            <a href="${pageContext.request.contextPath}/productManagement" style="color: black; text-decoration: none;">
-                Product Management </a></h5>
+            <a href="${pageContext.request.contextPath}/userManagement" style="color: black; text-decoration: none;">
+                User Management </a></h5>
     </div>
 </div>
 
@@ -73,75 +73,49 @@
     <div class="add_product" style="margin-left: 100px; margin-top: 30px;">
         <button style="border-radius: 10px; width: 200px; height: 40px; background-color: #B88E2F; cursor: pointer;">
             <a class="btn"
-                href="${pageContext.request.contextPath}/addProduct" style="color: white; font-weight: bold;">Add product</a>
+               href="${pageContext.request.contextPath}/addProduct" style="color: white; font-weight: bold;">Add
+                product</a>
         </button>
     </div>
 </div>
 <div>
-    <p class="m-5" style="color: green">The Number Of Product : ${amountOfProduct}</p>
+    <p class="m-5" style="color: green">The Number Of User : ${amountOfUser}</p>
 </div>
 <table class="table table-striped m-5">
     <thead>
     <tr>
         <th>ID</th>
-        <th>Product Name</th>
-        <th>Category</th>
-        <th>Image</th>
-        <th>Quantity</th>
-        <th>Price</th>
-        <th>Edit</th>
-        <th>Delete</th>
+        <th>User Account</th>
+        <th>First Name</th>
+        <th>First Name</th>
+        <th>Gmail</th>
+        <th>Phone Number</th>
+        <th>Address</th>
     </tr>
     </thead>
     <tbody>
-    <c:forEach items="${productList}" var="x">
+    <c:forEach items="${userList}" var="x">
         <tr>
-            <th scope="row">${x.productID}</th>
-            <td>${x.productName}</td>
-            <td>${x.category.categoryName}</td>
-            <td><img style="height: 100px; width: 100px" src="./images/${x.productImg}" alt=""></td>
-            <td>${x.quantity}</td>
-            <td>$${x.productPrice}</td>
-<%--            <td><a href="${pageContext.request.contextPath}/editNews?id=${x.id}">Edit</a></td>--%>
-            <td><a class="btn btn-primary" href="${pageContext.request.contextPath}/update?id=${x.productID}">Edit</a></td>
-            <td><a class="btn btn-danger" href="#" onclick="showMessage(${x.productID})">Delete</a></td>
+            <th scope="row">${x.userID}</th>
+            <td>${x.username}</td>
+            <td>${x.name.firstName}</td>
+            <td>${x.name.lastName}</td>
+            <td>${x.email}</td>
+            <td>${x.phoneNumber}</td>
+            <td>${x.address}</td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
 
-<nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-center">
-        <c:if test="${tag > 1}">
-            <li class="page-item">
-                <a class="page-link"
-                   href="${pageContext.request.contextPath}/productManagement?positionPage=${tag-1}">Previous</a>
-            </li>
-        </c:if>
-
-        <c:forEach begin="1" end="${endP}" var="i">
-            <li class="page-item">
-                <a class="page-link ${tag == i ? "active" : ""}"
-                   href="${pageContext.request.contextPath}/productManagement?positionPage=${i}">${i}</a>
-            </li>
-        </c:forEach>
-
-        <c:if test="${tag < 1}">
-            <li class="page-item">
-                <a class="page-link" href="${pageContext.request.contextPath}/productManagement?positionPage=${tag+1}">Next</a>
-            </li>
-        </c:if>
-    </ul>
-</nav>
-
 <!--------------------------------------->
 <%@include file="../layout/footer.jsp" %>
 </body>
 <script>
-    function showMessage(id){
+    function showMessage(id) {
         var option = confirm("Are you sure to delete");
-        if(option===true){
-            window.location.href = 'deleteProduct?id='+id;
+        if (option === true) {
+            window.location.href = 'deleteProduct?id=' + id;
         }
     }
 </script>

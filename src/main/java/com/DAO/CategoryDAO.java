@@ -8,7 +8,6 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author Will

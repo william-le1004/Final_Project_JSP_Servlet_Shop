@@ -22,43 +22,43 @@ public class ProductDAO implements DAO<Product> {
       }
 
       public static void main(String[] args) {
-//            String categoryTmp = "2";
-//            int categoryID = Integer.parseInt(categoryTmp);
-//            Category c = CategoryDAO.getInstance().doSearch(categoryID);
-//            System.out.println(c);
-//            Product p1 = new Product();
-//            p1.setProductName("Iphone 14 Pro Black");
-//            p1.setProductImg("iPhone-14-plus-thumb-den-600x600.jpg");
-//            p1.setProductPrice(1220.0);
-//            p1.setQuantity(100);
-//            p1.setCategory(c);
-//            ProductDAO.getInstance().insert(p1);
-//            int exp = 5;
-//            String salary = exp == 1 ? "checked" : "unchecked";
-//            String salary1 = exp == 1 ? "checked" : exp == 2 ? "checked" : exp == 3 ? "checked" : "unchecked";
-//
-//            System.out.println(salary1);
 //            Phone();
 //            Tablet();
 //            Laptop();
-
-            ArrayList<Product> p = ProductDAO.getInstance().doPagination(1);
+            ArrayList<Product> p = ProductDAO.getInstance().doPaginationDESC(8);
             p.forEach(System.out::println);
+            ArrayList<Product> p1 = ProductDAO.getInstance().doPagination(8);
+//            p1.forEach(System.out::println);
+            System.out.println(p1);
+//            Long total = ProductDAO.getInstance().getTotal();
+            System.out.println(ProductDAO.getInstance().selectAll());
       }
-      public ArrayList<Product> doPagination(int positionPage){
+
+      public ArrayList<Product> doPaginationDESC(int positionPage) {
             Session session = HibernateUltils.getSessionFactory().openSession();
-            Query query = session.createQuery("FROM Product ");
+            Query query = session.createQuery("FROM Product p ORDER BY p.productPrice");
             // (position - 1) x 8
-            query.setFirstResult((positionPage - 1)*8);
+            query.setFirstResult((positionPage - 1) * 8);
             query.setMaxResults(8);
             return (ArrayList<Product>) query.list();
       }
-      public Long getTotal(){
+
+      public ArrayList<Product> doPagination(int positionPage) {
+            Session session = HibernateUltils.getSessionFactory().openSession();
+            Query query = session.createQuery("FROM Product ");
+            // (position - 1) x 8
+            query.setFirstResult((positionPage - 1) * 8);
+            query.setMaxResults(8);
+            return (ArrayList<Product>) query.list();
+      }
+
+      public Long getTotal() {
             Session session = HibernateUltils.getSessionFactory().openSession();
             Long total = (Long) session.createQuery("select count(*) FROM Product p").uniqueResult();
             session.close();
             return total;
       }
+
       public static void Phone() {
             Category c1 = new Category();
             c1.setCategoryName("Phone");
@@ -194,7 +194,60 @@ public class ProductDAO implements DAO<Product> {
 
       @Override
       public void update(int id) {
+            Session session = HibernateUltils.getSessionFactory().openSession();
+            try {
+                  Transaction ts = session.beginTransaction();
+                  Query query = session.createQuery("UPDATE Product p SET p.productName= :name"
+                          + ",p.productImg = :img "
+                          + ",p.productPrice = :price "
+                          + ",p.quantity = :quantity "
+                          + ",p.category.categoryID = :cate " +
+                          " where id= :id");
+                  query.setParameter("id", id);
+                  query.setParameter("id", id);
+                  query.setParameter("id", id);
+                  query.setParameter("id", id);
+                  query.setParameter("id", id);
+                  int result = query.executeUpdate();
+                  ts.commit();
+                  System.out.println("Product Delete Status = " + result);
+                  session.close();
+            } catch (HibernateException e) {
+                  session.getTransaction().rollback();
+                  e.printStackTrace();
+            } finally {
+                  //   session.flush();
+                  session.close();
+            }
+      }
 
+      public void updateProduct(int id, String name, String img, Double price, int quantity, int cate) {
+            Session session = HibernateUltils.getSessionFactory().openSession();
+            try {
+                  Transaction ts = session.beginTransaction();
+                  Query query = session.createQuery("UPDATE Product p SET p.productName= :name"
+                          + ",p.productImg = :img "
+                          + ",p.productPrice = :price "
+                          + ",p.quantity = :quantity "
+                          + ",p.category.categoryID = :cate " +
+                          " where id= :id");
+                  query.setParameter("name", name);
+                  query.setParameter("img", img);
+                  query.setParameter("price", price);
+                  query.setParameter("quantity", quantity);
+                  query.setParameter("cate", cate);
+                  query.setParameter("id", id);
+                  int result = query.executeUpdate();
+                  ts.commit();
+                  System.out.println("Product Update Status = " + result);
+                  session.close();
+            } catch (HibernateException e) {
+                  session.getTransaction().rollback();
+                  e.printStackTrace();
+            } finally {
+                  //   session.flush();
+                  session.close();
+            }
       }
 
       @Override
@@ -238,7 +291,7 @@ public class ProductDAO implements DAO<Product> {
       public Product selectByID(int id) {
             Session session = HibernateUltils.getSessionFactory().openSession();
             Query query = session.createQuery(" from Product p where p.productID =:id");
-            query.setParameter("id",  id );
+            query.setParameter("id", id);
             Product product = (Product) query.uniqueResult();
             session.close();
             return product;

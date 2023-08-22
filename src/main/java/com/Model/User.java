@@ -24,8 +24,6 @@ public class User implements Serializable {
       @GeneratedValue(strategy = GenerationType.IDENTITY)
       @Column(name = "User_ID")
       private int userID;
-      //    String firstName;
-      //    String lastName;
       private UserName name;
       @Column(name = "Account_Name", unique = true, length = 30)
       private String username;
@@ -38,7 +36,7 @@ public class User implements Serializable {
       @Column(name = "Address", length = 50)
       private String address;
       @OneToOne(cascade = CascadeType.ALL)
-      @JoinColumn(name = "Cart_ID_U", referencedColumnName = "Cart_ID")
+      @JoinColumn(name = "FK_Cart_ID", referencedColumnName = "Cart_ID")
       private Cart cart;
 
 

@@ -32,13 +32,18 @@ public class Product implements Serializable {
       private Double productPrice;
       @Column(name = "Product_Quantity")
       private int quantity;
-      @ManyToOne
-      @JoinColumn(name = "Cart_ID_P", nullable = true, referencedColumnName = "Cart_ID")
-      private Cart cart;
 
-      //            @OneToOne(mappedBy = "products")
+//      @ManyToOne
+//      @JoinColumn(name = "FK_Cart", nullable = true, referencedColumnName = "Cart_ID")
+//      private Cart cart;
+
+//      @OneToOne(mappedBy = "products")
+//      private Item item;
+
       @OneToOne(cascade = CascadeType.ALL)
-      @JoinColumn(name = "Category_ID_P", referencedColumnName = "Category_ID")
+      @JoinColumn(name = "FK_Category", referencedColumnName = "Category_ID")
       private Category category ;
+
+
 
 }

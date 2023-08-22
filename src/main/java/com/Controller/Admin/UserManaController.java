@@ -1,11 +1,11 @@
 package com.Controller.Admin; /**
  * @author Will
- * @project Final_Project
- * @date 8/17/2023
+ * @project Final_Project - Copy
+ * @date 8/22/2023
  */
 
-import com.DAO.ProductDAO;
-import com.Model.Product;
+import com.DAO.UserDAO;
+import com.Model.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -15,14 +15,18 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 
-@WebServlet(name = "AdminController", value = "/admin")
-public class AdminController extends HttpServlet {
+@WebServlet(name = "UserManaController", value = "/userManagement")
+public class UserManaController extends HttpServlet {
 
       @Override
       protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            ArrayList<Product> productList = ProductDAO.getInstance().selectAll();
-            request.setAttribute("productList", productList);
-            request.getRequestDispatcher("/views/admin/adminPage.jsp").forward(request, response);
+
+            ArrayList<User> usertList = UserDAO.getInstance().selectAll();
+            int amountOfUser = usertList.size();
+
+            request.setAttribute("userList", usertList);
+            request.setAttribute("amountOfUser", amountOfUser);
+            request.getRequestDispatcher("/views/admin/userManagement.jsp").forward(request, response);
       }
 
       @Override
