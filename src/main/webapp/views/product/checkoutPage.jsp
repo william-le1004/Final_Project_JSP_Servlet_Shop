@@ -61,7 +61,7 @@
 <!---------------------------------------------------->
 
 <%
-//        String s = request.getSession().getAttribute("uName").toString();
+    //        String s = request.getSession().getAttribute("uName").toString();
 //    User user =
 %>
 
@@ -88,14 +88,16 @@
                         <div class="form-group" style="margin-bottom: 30px;">
 
                             <input type="text" name="firstname" required placeholder="First name"
-                                   style="width: 280px; height: 34px; border-radius: 5px; margin-right: 30px;" value="${sessionScope.userOB.name.firstName}">
+                                   style="width: 280px; height: 34px; border-radius: 5px; margin-right: 30px;"
+                                   value="${sessionScope.userOB.name.firstName}">
                         </div>
 
                         <div class="form-group" style="margin-bottom: 30px;">
 
 
                             <input type="text" name="lastname" required placeholder="Last name"
-                                   style="width: 280px; height: 34px; border-radius: 5px;" value="${sessionScope.userOB.name.lastName}">
+                                   style="width: 280px; height: 34px; border-radius: 5px;"
+                                   value="${sessionScope.userOB.name.lastName}">
                         </div>
                     </div>
 
@@ -103,7 +105,8 @@
                     <div class="form-group" style="margin-bottom: 30px;">
 
                         <input type="text" name="username" required placeholder="Username"
-                               style="width: 600px; height: 34px; border-radius: 5px;" value="${sessionScope.userOB.username}">
+                               style="width: 600px; height: 34px; border-radius: 5px;"
+                               value="${sessionScope.userOB.username}">
                     </div>
 
 
@@ -111,7 +114,8 @@
 
 
                         <input type="password" name="password" required placeholder="Password"
-                               style="width: 600px; height: 34px; border-radius: 5px;" value="${sessionScope.userOB.password}">
+                               style="width: 600px; height: 34px; border-radius: 5px;"
+                               value="${sessionScope.userOB.password}">
                     </div>
 
 
@@ -119,7 +123,8 @@
 
 
                         <input type="text" name="streetAddress" required placeholder="Street address"
-                               style="width: 600px; height: 34px; border-radius: 5px;" value="${sessionScope.userOB.address}">
+                               style="width: 600px; height: 34px; border-radius: 5px;"
+                               value="${sessionScope.userOB.address}">
                     </div>
 
 
@@ -127,7 +132,8 @@
 
 
                         <input type="number" name="phone" required placeholder="Phone"
-                               style="width: 600px; height: 34px; border-radius: 5px;" value="${sessionScope.userOB.phoneNumber}">
+                               style="width: 600px; height: 34px; border-radius: 5px;"
+                               value="${sessionScope.userOB.phoneNumber}">
                     </div>
 
 
@@ -135,7 +141,8 @@
 
 
                         <input type="email" name="email" required placeholder="Email"
-                               style="width: 600px; height: 34px; border-radius: 5px;" value="${sessionScope.userOB.email}">
+                               style="width: 600px; height: 34px; border-radius: 5px;"
+                               value="${sessionScope.userOB.email}">
                     </div>
                     <div style="display: flex; margin-left: 80px; margin-bottom: 30px;">
                         <button type="submit" id="btn-login"
@@ -159,7 +166,7 @@
                 <div style="margin-left: 80px;">
                     <c:set var="s" value="0"></c:set>
                     <c:forEach items="${sessionScope.cart}" var="i">
-                    <c:set var="s" value="${s + i.product.productPrice * i.quantity}"></c:set>
+                        <c:set var="s" value="${s + i.product.productPrice * i.quantity}"></c:set>
                         <!------Sản phẩm 1 --->
                         <div class="product-info" style="margin-top: 30px;">
                         <span style="font-weight: bold;  font-size: 17px;">${i.product.productName}<span
@@ -178,16 +185,16 @@
                     <p style="font-size: 26px; font-weight: bold; margin-left: 75px;">Total: <span
                             style="color: red; margin-left: 204px;">$${s}</span></p>
 
-<%--                    <div style="display: flex; margin-left: 80px; margin-bottom: 30px;">--%>
-<%--                        <button type="submit" id="btn-login"--%>
-<%--                                style="width: 200px; height: 50px; margin-right: 30px; border-radius: 10px; background-color: #B88E2F; color: white; font-weight: bold; font-size: 24px; cursor: pointer;">--%>
-<%--                            Place order--%>
-<%--                        </button>--%>
-<%--                        <button type="submit" id="btn-login"--%>
-<%--                                style="width: 200px; height: 50px; border-radius: 10px; background-color: #B88E2F; color: white; font-weight: bold; font-size: 24px; cursor: pointer;">--%>
-<%--                            Return--%>
-<%--                        </button>--%>
-<%--                    </div>--%>
+                    <%--                    <div style="display: flex; margin-left: 80px; margin-bottom: 30px;">--%>
+                    <%--                        <button type="submit" id="btn-login"--%>
+                    <%--                                style="width: 200px; height: 50px; margin-right: 30px; border-radius: 10px; background-color: #B88E2F; color: white; font-weight: bold; font-size: 24px; cursor: pointer;">--%>
+                    <%--                            Place order--%>
+                    <%--                        </button>--%>
+                    <%--                        <button type="submit" id="btn-login"--%>
+                    <%--                                style="width: 200px; height: 50px; border-radius: 10px; background-color: #B88E2F; color: white; font-weight: bold; font-size: 24px; cursor: pointer;">--%>
+                    <%--                            Return--%>
+                    <%--                        </button>--%>
+                    <%--                    </div>--%>
 
 
                 </div>

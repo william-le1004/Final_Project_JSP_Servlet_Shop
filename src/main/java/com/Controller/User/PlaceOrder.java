@@ -86,11 +86,11 @@ public class PlaceOrder extends HttpServlet {
 
             // upperBound 20 will also be included
             long range = (upperBound - lowerBound) + 1;
-            long orderNumber = (long)(Math.random() * range) + lowerBound;
+            long orderNumber = (long) (Math.random() * range) + lowerBound;
             String html = "<div class=\"container text-center\">\n" +
                     "        <h1>Thank you.</h1>\n" +
                     "        <p class=\"lead w-lg-50 mx-auto\">Your order has been placed successfully.</p>\n" +
-                    "        <p class=\"w-lg-50 mx-auto\">Your order number is " + orderNumber +  ". We will immediatelly process your and it will be delivered in 2 - 5 business days.</p>\n" +
+                    "        <p class=\"w-lg-50 mx-auto\">Your order number is " + orderNumber + ". We will immediatelly process your and it will be delivered in 2 - 5 business days.</p>\n" +
                     "    </div>";
             Mail.sendEmail(email, "Order Success", html);
             request.setAttribute("user", u);

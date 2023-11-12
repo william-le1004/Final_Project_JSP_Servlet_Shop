@@ -383,8 +383,9 @@ Author     : Administrator
         <div class="group">
             <div class="div" style="margin-left: -140px;">
                 <%
-                    if(request.getSession().getAttribute("uName")!=null){ %>
-                <div class="text-wrapper" style="margin-left: -150px;margin-top: -12px;"><p>Welcome ${sessionScope.uName}</p></div>
+                    if (request.getSession().getAttribute("uName") != null) { %>
+                <div class="text-wrapper" style="margin-left: -150px;margin-top: -12px;"><p>
+                    Welcome ${sessionScope.uName}</p></div>
                 <% }%>
 
                 <div class="text-wrapper" style="z-index: 10; margin-top: 3px; margin-left: 30px;"><a
@@ -396,10 +397,10 @@ Author     : Administrator
                 <div class="text-wrapper-4" style="margin-left: -120px; margin-top: 3px; "><a
                         href="${pageContext.request.contextPath}/contact">Contact</a></div>
                 <%
-                    if(request.getSession().getAttribute("uName")==null){ %>
+                    if (request.getSession().getAttribute("uName") == null) { %>
                 <div class="text-wrapper-4" style="margin-left: -20px; margin-top: 3px; "><a
                         href="${pageContext.request.contextPath}/login">Log in</a></div>
-                <% }else{ %>
+                <% } else { %>
                 <div class="text-wrapper-4" style="margin-left: 0px; margin-top: 3px;"><a
                         href="${pageContext.request.contextPath}/logout">Log out</a></div>
                 <% }
@@ -413,7 +414,8 @@ Author     : Administrator
                 <form class="input-group" action="search" method="post" style="margin-left: 910px;">
                     <div style="display: flex;">
                         <div class="form-outline">
-                            <input type="search" name="searchResult" id="form1" class="form-control" placeholder="Search..."
+                            <input type="search" name="searchResult" id="form1" class="form-control"
+                                   placeholder="Search..."
                                    style="width: 300px; height: 36px;  border-radius: 5px; margin-right: 10px;margin-left: -100px;"/>
                         </div>
                         <button type="button" class="btn btn-primary"
@@ -429,8 +431,10 @@ Author     : Administrator
 
                 <a href="./views/product/wishListPage.jsp"><img class="akar-icons-heart" alt="Akar icons heart"
                                                                 src="./Image/akar-icons-heart.svg"/></a>
-                <a href="${pageContext.request.contextPath}/addCart"><img class="ant-design-shopping" alt="Ant design shopping"
-                                        src="./Image/ant-design-shopping-cart-outlined.svg" style="margin-left: -30px;"/></a>
+                <a href="${pageContext.request.contextPath}/addCart"><img class="ant-design-shopping"
+                                                                          alt="Ant design shopping"
+                                                                          src="./Image/ant-design-shopping-cart-outlined.svg"
+                                                                          style="margin-left: -30px;"/></a>
 
 
                 <div class="frame_header" style="width: 7%;">

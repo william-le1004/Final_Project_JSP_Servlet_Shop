@@ -29,7 +29,7 @@
             color: var(--font-color-1, #666);
         }
 
-        .category{
+        .category {
             margin-left: 39px;
             margin-bottom: 30px;
 
@@ -58,7 +58,7 @@
             font-weight: 700;
         }
 
-        .title  {
+        .title {
             margin-left: 600px;
         }
 
@@ -70,12 +70,13 @@
         .category_text_1 {
             padding-left: 100px;
             margin-left: 238px;
-            -webkit-transition-duration: 0.4s; /* Safari */  transition-duration: 0.4s;
+            -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
 
 
         }
 
-        .category_text_2{
+        .category_text_2 {
             padding-left: 220px;
         }
 
@@ -117,8 +118,7 @@
             height: 100px;
         }
 
-        .show_more_button
-        {
+        .show_more_button {
             margin-top: 50px;
             margin-left: 510px;
         }
@@ -137,143 +137,139 @@
         }
 
 
-
-
-
-
-        .container{
+        .container {
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
-            padding:25px 20px;
+            padding: 25px 20px;
         }
 
-        .container .heading{
+        .container .heading {
             font-size: 40px;
             margin-bottom: 20px;
-            color:#334;
+            color: #334;
         }
 
-        .container .box-container{
+        .container .box-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap:20px;
+            gap: 20px;
         }
 
 
-        .container .box-container .box{
+        .container .box-container .box {
             background-color: #fff;
-            padding:20px;
+            padding: 20px;
             border-radius: 5px;
-            box-shadow: 0 5px 10px rgba(0,0,0,.2);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
             display: none;
         }
 
         .container .box-container .box:nth-child(1),
         .container .box-container .box:nth-child(2),
         .container .box-container .box:nth-child(3),
-        .container .box-container .box:nth-child(4){
+        .container .box-container .box:nth-child(4) {
             display: inline-block;
         }
 
-        .container .box-container .box .image{
+        .container .box-container .box .image {
             margin-bottom: 20px;
             overflow: hidden;
             height: 250px;
             border-radius: 5px;
         }
 
-        .container .box-container .box .image img{
+        .container .box-container .box .image img {
             height: 100%;
             width: 100%;
             object-fit: cover;
         }
 
-        .container .box-container .box:hover .image img{
+        .container .box-container .box:hover .image img {
             transform: scale(1.1);
         }
 
-        .container .box-container .box .content h3{
+        .container .box-container .box .content h3 {
             font-size: 20px;
-            color:#334;
+            color: #334;
         }
 
-        .container .box-container .box .content p{
+        .container .box-container .box .content p {
             font-size: 15px;
-            color:#777;
+            color: #777;
             line-height: 2;
-            padding:15px 0;
+            padding: 15px 0;
         }
 
-        .container .box-container .box .content .btn{
+        .container .box-container .box .content .btn {
             display: inline-block;
-            padding:10px 30px;
-            border:1px solid #334;
-            color:#334;
+            padding: 10px 30px;
+            border: 1px solid #334;
+            color: #334;
             font-size: 16px;
         }
 
-        .container .box-container .box .content .btn:hover{
+        .container .box-container .box .content .btn:hover {
             background-color: #B88E2F;
             border-color: #B88E2F;
-            color:#fff;
+            color: #fff;
         }
 
-        .container .box-container .box .content .icons{
+        .container .box-container .box .content .icons {
             display: flex;
             align-items: center;
             justify-content: space-between;
             margin-top: 20px;
             padding-top: 15px;
-            border-top:1px solid #334;
+            border-top: 1px solid #334;
         }
 
-        .container .box-container .box .content .icons span{
+        .container .box-container .box .content .icons span {
             font-size: 14px;
-            color:#777;
+            color: #777;
         }
 
-        .container .box-container .box .content .icons span i{
-            color:crimson;
+        .container .box-container .box .content .icons span i {
+            color: crimson;
             padding-right: 5px;
         }
 
-        #load-more{
+        #load-more {
             margin-top: 20px;
             display: inline-block;
-            padding:13px 30px;
-            border:1px solid #334;
-            color:#334;
+            padding: 13px 30px;
+            border: 1px solid #334;
+            color: #334;
             font-size: 16px;
             background-color: #fff;
             cursor: pointer;
         }
 
-        #load-more:hover{
+        #load-more:hover {
             background-color: crimson;
             border-color: crimson;
-            color:#fff;
+            color: #fff;
         }
 
-        @media (max-width:450px){
+        @media (max-width: 450px) {
 
-            .container .heading{
+            .container .heading {
                 font-size: 25px;
             }
 
-            .container .box-container{
+            .container .box-container {
                 grid-template-columns: 1fr;
             }
 
-            .container .box-container .box .image{
+            .container .box-container .box .image {
                 height: 200px;
             }
 
-            .container .box-container .box .content p{
+            .container .box-container .box .content p {
                 font-size: 12px;
             }
 
-            .container .box-container .box .content .icons span{
+            .container .box-container .box .content .icons span {
                 font-size: 12px;
             }
 
@@ -299,13 +295,13 @@
 
 
     <div class="title">
-        <h2 style= "margin-top: 20px; font-weight: bold; font-size: 44px; margin-left: 27px;">Product</h2>
+        <h2 style="margin-top: 20px; font-weight: bold; font-size: 44px; margin-left: 27px;">Product</h2>
     </div>
 
     <!--------------------------------------------------------------------->
 
 
-    <div class="container" >
+    <div class="container">
 
 
         <div class="box-container">
@@ -321,10 +317,12 @@
                     <div class="content">
                         <h3 style="font-weight: bold">${o.productName}</h3>
                         <p style="margin-top: -14px;">${o.category.categoryName}</p>
-                        <p style="margin-top: -40px; color: #B88E2F; font-weight: bold; font-size: 20px;">$${o.productPrice}</p>
+                        <p style="margin-top: -40px; color: #B88E2F; font-weight: bold; font-size: 20px;">
+                            $${o.productPrice}</p>
 
                         <!-- NHẤN VÀO READ MORE ĐỂ ĐI ĐẾN TRANG DETAIL PAGE CỦA TỪNG SẢN PHẨM NHA -->
-                        <a href="${pageContext.request.contextPath}/detail?id=${o.productID}&product_name?=${o.productName}" class="btn" style="font-weight: bold;">
+                        <a href="${pageContext.request.contextPath}/detail?id=${o.productID}&product_name?=${o.productName}"
+                           class="btn" style="font-weight: bold;">
                             <i class="bi bi-info-circle"></i> Read more </a>
 
                     </div>
@@ -332,7 +330,10 @@
             </c:forEach>
 
         </div>
-        <div id="load-more" style="margin-top: 60px; border-radius: 10px; font-weight: bold; color: white; background-color: #B88E2F; border-color: #B88E2F;"> Load more </div>
+        <div id="load-more"
+             style="margin-top: 60px; border-radius: 10px; font-weight: bold; color: white; background-color: #B88E2F; border-color: #B88E2F;">
+            Load more
+        </div>
 
 
         <script>
@@ -340,18 +341,18 @@
             let loadMoreBtn = document.querySelector('#load-more');
             let currentItem = 4;
 
-            loadMoreBtn.onclick = () =>{
+            loadMoreBtn.onclick = () => {
                 let boxes = [...document.querySelectorAll('.container .box-container .box')];
-                for (var i = currentItem; i < currentItem + 4; i++){
-                    if( boxes[i] != null){
+                for (var i = currentItem; i < currentItem + 4; i++) {
+                    if (boxes[i] != null) {
                         boxes[i].style.display = 'inline-block';
                     }
                 }
-                console.log(currentItem,boxes.length);
+                console.log(currentItem, boxes.length);
                 console.log(loadMoreBtn);
                 currentItem += 4;
 
-                if(currentItem >= boxes.length){
+                if (currentItem >= boxes.length) {
                     loadMoreBtn.style.display = 'none';
                 }
             }
@@ -370,7 +371,8 @@
                     SHOP</h2>
                 <div class="furniture__label"
                      style="font-size: 38px; margin-bottom: 48px;">Furniture
-                    shop</div>
+                    shop
+                </div>
                 <div class="furniture__body" data-speed="0.01">
                     <div class="furniture__items _gallery"
                          style="margin-bottom: 70px;">

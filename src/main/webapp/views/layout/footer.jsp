@@ -406,10 +406,14 @@
                     <div class="group-3">
                         <div class="group-4">
                             <div class="group-5">
-                                <div class="text-wrapper-2"><a href="${pageContext.request.contextPath}/home">Home</a></div>
-                                <div class="text-wrapper-3"><a href="${pageContext.request.contextPath}/shop">Shop</a></div>
-                                <div class="text-wrapper-4"><a href="${pageContext.request.contextPath}/blog">About</a></div>
-                                <div class="text-wrapper-5"><a href="${pageContext.request.contextPath}/contact">Contact</a></div>
+                                <div class="text-wrapper-2"><a href="${pageContext.request.contextPath}/home">Home</a>
+                                </div>
+                                <div class="text-wrapper-3"><a href="${pageContext.request.contextPath}/shop">Shop</a>
+                                </div>
+                                <div class="text-wrapper-4"><a href="${pageContext.request.contextPath}/blog">About</a>
+                                </div>
+                                <div class="text-wrapper-5"><a
+                                        href="${pageContext.request.contextPath}/contact">Contact</a></div>
                             </div>
                             <div class="text-wrapper-6">Links</div>
                         </div>

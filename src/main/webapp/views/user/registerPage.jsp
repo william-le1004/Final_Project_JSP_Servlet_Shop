@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Resigter Page</title>
-<%--    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">--%>
+    <%--    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.min.css">--%>
     <link rel="icon" href="./Image/cr7.jpg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
@@ -122,7 +122,8 @@
             </span>
         </form>
 
-        <a href="${pageContext.request.contextPath}/login"><p style="color: white; padding-bottom: 12px; text-decoration: none;"> Already have an
+        <a href="${pageContext.request.contextPath}/login"><p
+                style="color: white; padding-bottom: 12px; text-decoration: none;"> Already have an
             account ? Login here </p></a>
 
     </div>

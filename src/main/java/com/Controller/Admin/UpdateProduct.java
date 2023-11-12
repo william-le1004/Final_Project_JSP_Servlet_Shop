@@ -69,8 +69,8 @@ public class UpdateProduct extends HttpServlet {
                   }
                   part.write(pathUpload + "/" + fileName);
 
-                 // fix id , and update
-                  ProductDAO.getInstance().updateProduct(id,name,fileName,price,quantity,cate);
+                  // fix id , and update
+                  ProductDAO.getInstance().updateProduct(id, name, fileName, price, quantity, cate);
 
             } catch (IOException e) {
                   e.printStackTrace();

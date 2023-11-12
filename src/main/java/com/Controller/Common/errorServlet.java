@@ -15,8 +15,8 @@ public class errorServlet extends HttpServlet {
 
       @Override
       protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-          request.setAttribute("ERROR", "Not Found");
-          request.getRequestDispatcher("views/error.jsp").forward(request, response);
+            request.setAttribute("ERROR", "Not Found");
+            request.getRequestDispatcher("views/error.jsp").forward(request, response);
       }
 
       @Override

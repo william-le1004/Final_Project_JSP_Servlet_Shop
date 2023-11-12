@@ -73,7 +73,8 @@
     <div class="add_product" style="margin-left: 100px; margin-top: 30px;">
         <button style="border-radius: 10px; width: 200px; height: 40px; background-color: #B88E2F; cursor: pointer;">
             <a class="btn"
-                href="${pageContext.request.contextPath}/addProduct" style="color: white; font-weight: bold;">Add product</a>
+               href="${pageContext.request.contextPath}/addProduct" style="color: white; font-weight: bold;">Add
+                product</a>
         </button>
     </div>
 </div>
@@ -102,8 +103,9 @@
             <td><img style="height: 100px; width: 100px" src="./images/${x.productImg}" alt=""></td>
             <td>${x.quantity}</td>
             <td>$${x.productPrice}</td>
-<%--            <td><a href="${pageContext.request.contextPath}/editNews?id=${x.id}">Edit</a></td>--%>
-            <td><a class="btn btn-primary" href="${pageContext.request.contextPath}/update?id=${x.productID}">Edit</a></td>
+                <%--            <td><a href="${pageContext.request.contextPath}/editNews?id=${x.id}">Edit</a></td>--%>
+            <td><a class="btn btn-primary" href="${pageContext.request.contextPath}/update?id=${x.productID}">Edit</a>
+            </td>
             <td><a class="btn btn-danger" href="#" onclick="showMessage(${x.productID})">Delete</a></td>
         </tr>
     </c:forEach>
@@ -138,10 +140,10 @@
 <%@include file="../layout/footer.jsp" %>
 </body>
 <script>
-    function showMessage(id){
+    function showMessage(id) {
         var option = confirm("Are you sure to delete");
-        if(option===true){
-            window.location.href = 'deleteProduct?id='+id;
+        if (option === true) {
+            window.location.href = 'deleteProduct?id=' + id;
         }
     }
 </script>

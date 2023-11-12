@@ -560,7 +560,8 @@
                             <div class="h-bg-inner"></div>
                         </div>
 
-                        <a class="cart" href="${pageContext.request.contextPath}/detail?id=${o.productID}&product_name?=${o.productName}">
+                        <a class="cart"
+                           href="${pageContext.request.contextPath}/detail?id=${o.productID}&product_name?=${o.productName}">
                             <span class="price" style="color: red; font-size: 24px;">$${o.productPrice}</span>
                             <span class="add-to-cart">
                 <span class="txt" style="font-size: 20px; margin-left: 40px;">
@@ -575,7 +576,8 @@
                         <button style="width: 100px; height: 40px; background-color: #B88E2F; color: white; font-weight: bold; border-radius: 10px; cursor: pointer;">
                             <a href="${pageContext.request.contextPath}/addCart?id=${o.productID}&action=addCart"
                                class="btn"
-                               style="font-weight: bold; color: white; text-decoration: none;font-size: 10px;">Buy</a></button>
+                               style="font-weight: bold; color: white; text-decoration: none;font-size: 10px;">Buy</a>
+                        </button>
                         <button style="width: 100px; height: 40px; background-color: #B88E2F; color: white; font-weight: bold; border-radius: 10px; cursor: pointer;">
                             <a href="${pageContext.request.contextPath}/addCart?id=${o.productID}&action=addCart"
                                class="btn"

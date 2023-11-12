@@ -92,20 +92,21 @@
                 </label>
                     <input> ${username}
  			</span><br>
-            <span>
+        <span>
  				<i class="bi bi-key"></i>
                 <label>Your Password :
                 </label>
  				<input> ${password}
  			</span><br>
         <%--            <div>--%>
-            <span>
+        <span>
                 <button type="submit">LOGIN</button>
                 <i class="bi bi-pencil"></i>
             </span><br>
         <%--            </div>--%>
         <a href="${pageContext.request.contextPath}/login"><p
-                style="color: white;margin-top: -20px;padding-bottom: 20px;text-decoration: none;"> Return Login Page </p></a>
+                style="color: white;margin-top: -20px;padding-bottom: 20px;text-decoration: none;"> Return Login
+            Page </p></a>
     </div>
 </div>
 </body>
