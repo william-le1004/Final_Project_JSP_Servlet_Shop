@@ -4,7 +4,7 @@
     Author     : Administrator
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -18,6 +18,7 @@
             background-size: cover;
 
         }
+
         .text {
             color: black;
             position: absolute;
@@ -136,9 +137,6 @@
         }
 
 
-
-
-
         .dropbtn {
             background-color: #F9F1E7;
             color: white;
@@ -165,7 +163,9 @@
         }
 
 
-        #myInput:focus {outline: 3px solid #ddd;}
+        #myInput:focus {
+            outline: 3px solid #ddd;
+        }
 
 
         .dropdown {
@@ -192,10 +192,13 @@
         }
 
 
-        .dropdown-content a:hover {background-color: #f1f1f1}
-        .show {display:block;}
+        .dropdown-content a:hover {
+            background-color: #f1f1f1
+        }
 
-
+        .show {
+            display: block;
+        }
 
 
         .d-flex {
@@ -219,7 +222,6 @@
             -ms-flex-align: center;
             align-items: center;
         }
-
 
 
         .page-wrapper {
@@ -495,7 +497,8 @@
 <div class="group" style="background-color: #75897e; padding: 20px">
     <hgroup class="mb20">
         <h1>Search Results</h1>
-        <h2 class="lead"><strong class="text-danger">${amountOfProduct}</strong> results were found for the search for <strong class="text-danger">"${keyword}"</strong></h2>
+        <h2 class="lead"><strong class="text-danger">${amountOfProduct}</strong> results were found for the search for
+            <strong class="text-danger">"${keyword}"</strong></h2>
     </hgroup>
     <div class="div" style="display: flex; margin-left: 98px; margin-bottom: 10px; margin-top: 30px;">
     </div>
@@ -509,7 +512,7 @@
                     <div class="box-up">
                         <img class="img" src="./images/${o.productImg}" alt="" style="width: 200px; height: 200px;">
                         <div class="img-info">
-                            <div class="info-inner" >
+                            <div class="info-inner">
                                 <span class="p-name" style="font-weight: bold;">${o.productName}</span>
                                 <span class="p-company">${o.category.categoryName}</span>
                             </div>
@@ -532,14 +535,15 @@
                         </a>
                     </div>
                     <div style="margin-top: 30px; margin-left: 60px;">
-                        <button style="width: 100px; height: 40px; background-color: #B88E2F; color: white; font-weight: bold; font-size: 16px; border-radius: 10px; cursor: pointer; margin-right: 30px;">Buy now</button>
-                        <button style="width: 100px; height: 40px; background-color: #B88E2F; color: white; font-weight: bold; font-size: 15px;; border-radius: 10px; cursor: pointer;">Add to cart</button>
+                        <button style="width: 100px; height: 40px; background-color: #B88E2F; color: white; font-weight: bold; font-size: 16px; border-radius: 10px; cursor: pointer; margin-right: 30px;">
+                            Buy now
+                        </button>
+                        <button style="width: 100px; height: 40px; background-color: #B88E2F; color: white; font-weight: bold; font-size: 15px;; border-radius: 10px; cursor: pointer;">
+                            Add to cart
+                        </button>
                     </div>
                 </div>
             </c:forEach>
-
-
-
 
 
         </div>
@@ -547,14 +551,10 @@
         <!---------------ANOTHER ROW -------------------------------->
 
 
-
-
-
     </div>
 </div>
 
 <!---------------------------------------------------->
-
 
 
 <nav aria-label="Page navigation example">
@@ -583,7 +583,8 @@
 <!---------------------------------------------------->
 
 <div class="quality_holder" style="background-color:#FAF3EA; height: 300px;">
-    <div class="quality_box" style="background-color:#FAF3EA; vertical-align: central; align-items: center; margin-left: 98px; margin-right: 98px;">
+    <div class="quality_box"
+         style="background-color:#FAF3EA; vertical-align: central; align-items: center; margin-left: 98px; margin-right: 98px;">
         <div class="quality_1" style="margin-top: 110px;">
             <img src="./Image/trophy 1.svg">
             <span style="font-weight: bold; margin-top: -0px;">High quality</span></br>

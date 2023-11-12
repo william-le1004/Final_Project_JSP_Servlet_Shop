@@ -89,7 +89,7 @@ public class Mail {
 
             // upperBound 20 will also be included
             long range = (upperBound - lowerBound) + 1;
-            long random = (long)(Math.random() * range) + lowerBound;
+            long random = (long) (Math.random() * range) + lowerBound;
             System.out.println(random);
 //            Mail.sendEmail("kienle4456@gmail.com", "Order Success", " <div class=\"container text-center\">\n" +
 //                    "        <h1>Thank you.</h1>\n" +

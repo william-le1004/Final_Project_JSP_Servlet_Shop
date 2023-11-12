@@ -15,6 +15,7 @@ import lombok.*;
 @NoArgsConstructor
 
 public class Item1 {
+
       private Product product;
       private int quantity;
 

@@ -253,7 +253,7 @@
     </div>
 
     <!-- Product #1 -->
-        <c:set var="s" value="0"></c:set>
+    <c:set var="s" value="0"></c:set>
     <c:forEach items="${sessionScope.cart}" var="i">
         <c:set var="s" value="${s + i.product.productPrice * i.quantity}"></c:set>
         <div class="item">
@@ -302,7 +302,6 @@
 
 
 </div>
-
 
 
 <!---------------------------------------------------->

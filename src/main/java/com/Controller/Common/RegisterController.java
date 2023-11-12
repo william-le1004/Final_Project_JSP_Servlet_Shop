@@ -34,11 +34,11 @@ public class RegisterController extends HttpServlet {
             String phoneNumber = request.getParameter("phoneNumber");
             String address = request.getParameter("address");
 
-            UserDAO.getInstance().insert(new User(name,username,password,email,phoneNumber,address));
+            UserDAO.getInstance().insert(new User(name, username, password, email, phoneNumber, address));
 
-            request.setAttribute("message","Register Success");
-            request.setAttribute("username",username);
-            request.setAttribute("password",password);
+            request.setAttribute("message", "Register Success");
+            request.setAttribute("username", username);
+            request.setAttribute("password", password);
 
             request.getRequestDispatcher("/views/user/registerSuccess.jsp").forward(request, response);
 

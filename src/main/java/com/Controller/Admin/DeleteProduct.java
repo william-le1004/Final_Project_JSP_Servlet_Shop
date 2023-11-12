@@ -16,10 +16,10 @@ public class DeleteProduct extends HttpServlet {
 
       @Override
       protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-          String tmpID = request.getParameter("id");
-          int id = Integer.parseInt(tmpID);
-          ProductDAO.getInstance().delete(id);
-          response.sendRedirect("productManagement");
+            String tmpID = request.getParameter("id");
+            int id = Integer.parseInt(tmpID);
+            ProductDAO.getInstance().delete(id);
+            response.sendRedirect("productManagement");
       }
 
       @Override

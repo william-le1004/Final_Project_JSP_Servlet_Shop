@@ -18,6 +18,7 @@
             background-size: cover;
 
         }
+
         .text {
             color: black;
             position: absolute;
@@ -45,7 +46,9 @@
     <div class="text">
         <h1>WISHLIST</h1>
         <h5>
-            <a href="HomePage.jsp" style="color: black; text-decoration: none;"> Home </a> > <a href="WishListPage.jsp" style="color: black; text-decoration: none;"> Wishlist </a></h5>
+            <a href="HomePage.jsp" style="color: black; text-decoration: none;"> Home </a> > <a href="WishListPage.jsp"
+                                                                                                style="color: black; text-decoration: none;">
+            Wishlist </a></h5>
     </div>
 </div>
 <h1>PRODUT MANAGEMENT</h1>

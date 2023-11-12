@@ -42,8 +42,7 @@ public class Product implements Serializable {
 
       @OneToOne(cascade = CascadeType.ALL)
       @JoinColumn(name = "FK_Category", referencedColumnName = "Category_ID")
-      private Category category ;
-
+      private Category category;
 
 
 }

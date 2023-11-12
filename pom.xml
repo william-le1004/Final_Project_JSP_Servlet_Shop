@@ -62,15 +62,12 @@
         </dependency>
 
 
-<!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.sun.activation/javax.activation &ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>com.sun.activation</groupId>-->
-<!--            <artifactId>javax.activation</artifactId>-->
-<!--            <version>1.2.0</version>-->
-<!--        </dependency>-->
-
-
-
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/com.sun.activation/javax.activation &ndash;&gt;-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.sun.activation</groupId>-->
+        <!--            <artifactId>javax.activation</artifactId>-->
+        <!--            <version>1.2.0</version>-->
+        <!--        </dependency>-->
 
 
     </dependencies>

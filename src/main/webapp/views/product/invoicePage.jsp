@@ -242,9 +242,9 @@
         </div><!--End InvoiceBot-->
 
         <button style="width: 200px; height: 40px; background-color: #B88E2F; color: white; border-radius: 10px; font-weight: bold; font-size: 16px; border-color: #B88E2F; margin-left: 260px;">
-           <a href="${pageContext.request.contextPath}/shop" style="text-decoration: none">
-               Return
-           </a>
+            <a href="${pageContext.request.contextPath}/shop" style="text-decoration: none">
+                Return
+            </a>
             <%
                 request.getSession().removeAttribute("cart");
 

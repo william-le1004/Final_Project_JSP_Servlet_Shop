@@ -1,4 +1,3 @@
-
 <%--
     Document   : Header
     Created on : Aug 11, 2023, 2:13:11 PM
@@ -407,7 +406,8 @@
         <div class="group">
             <div class="overlap-group">
                 <div class="div" style="margin-left: -10px; ">
-                    <div class="text-wrapper" style="margin-left: -250px;margin-top: -12px;"><p>Wellcome ${sessionScope.aName}</p></div>
+                    <div class="text-wrapper" style="margin-left: -250px;margin-top: -12px;"><p>
+                        Wellcome ${sessionScope.aName}</p></div>
                     <div class="text-wrapper" style="z-index: 10; margin-top: 3px; margin-left: -90px;"><a
                             href="${pageContext.request.contextPath}/home">Home</a></div>
                     <div class="text-wrapper-2" style="margin-left: -150px; margin-top: 3px"><a
@@ -417,10 +417,10 @@
                     <div class="text-wrapper-4" style="margin-left: -260px; margin-top: 3px; "><a
                             href="${pageContext.request.contextPath}/contact">Contact</a></div>
                     <%
-                        if(request.getSession().getAttribute("aName")==null){ %>
+                        if (request.getSession().getAttribute("aName") == null) { %>
                     <div class="text-wrapper-4" style="margin-left: -174px; margin-top: 3px; "><a
                             href="${pageContext.request.contextPath}/login">Log in</a></div>
-                    <% }else{ %>
+                    <% } else { %>
                     <div class="text-wrapper-4" style="margin-left: -100px; margin-top: 3px; "><a
                             href="${pageContext.request.contextPath}/logout">Log out</a></div>
                     <% }
@@ -430,8 +430,10 @@
                     <div class="d-down" style="margin-left: 345px; width: 200px;margin-top: 5px;">
                         <span style="font-family: 'Poppins-Medium', Helvetica; font-weight: bold;cursor: pointer; ">Admin action</span>
                         <div class="d-down-content">
-                            <a href="${pageContext.request.contextPath}/productManagement" style="padding: 15px;"><p>Product Management</p></a>
-                            <a href="${pageContext.request.contextPath}/userManagement" style="padding: 15px;"><p>User Management</p></a>
+                            <a href="${pageContext.request.contextPath}/productManagement" style="padding: 15px;"><p>
+                                Product Management</p></a>
+                            <a href="${pageContext.request.contextPath}/userManagement" style="padding: 15px;"><p>User
+                                Management</p></a>
                         </div>
                     </div>
 
@@ -453,14 +455,16 @@
                     </form>
 
 
-
                     <!------------------------------------------------------------------->
 
 
                     <a href="./views/product/wishListPage.jsp"><img class="akar-icons-heart" alt="Akar icons heart"
-                                                                    src="./Image/akar-icons-heart.svg" style="margin-left: -30px;"/></a>
-                    <a href="${pageContext.request.contextPath}/addCart"><img class="ant-design-shopping" alt="Ant design shopping"
-                                                                              src="./Image/ant-design-shopping-cart-outlined.svg" style="margin-left: -50px;"/></a>
+                                                                    src="./Image/akar-icons-heart.svg"
+                                                                    style="margin-left: -30px;"/></a>
+                    <a href="${pageContext.request.contextPath}/addCart"><img class="ant-design-shopping"
+                                                                              alt="Ant design shopping"
+                                                                              src="./Image/ant-design-shopping-cart-outlined.svg"
+                                                                              style="margin-left: -50px;"/></a>
 
                     <div class="frame_header" style="width: 7%;">
                         <a href="${pageContext.request.contextPath}/home"><img class="meubel-house-logos"

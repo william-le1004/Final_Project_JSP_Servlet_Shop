@@ -28,18 +28,17 @@ public class LoginController extends HttpServlet {
             String name = request.getParameter("userName");
             String password = request.getParameter("password");
             HttpSession session = request.getSession();
-            if(AdminDAO.getInstance().AdminCheck(name, password)) {
+            if (AdminDAO.getInstance().AdminCheck(name, password)) {
 //                  HttpSession session = request.getSession();
-                  session.setAttribute("aName",name);
-                  session.setAttribute("aPass",password);
+                  session.setAttribute("aName", name);
+                  session.setAttribute("aPass", password);
                   response.sendRedirect("admin");
-            }else if(UserDAO.getInstance().UserCheck(name, password)){
-                  session.setAttribute("uName",name);
-                  session.setAttribute("uPass",password);
+            } else if (UserDAO.getInstance().UserCheck(name, password)) {
+                  session.setAttribute("uName", name);
+                  session.setAttribute("uPass", password);
                   response.sendRedirect("home");
-            }
-            else{
-                  request.setAttribute("message","Maybe Wrong User Name Or Password");
+            } else {
+                  request.setAttribute("message", "Maybe Wrong User Name Or Password");
                   request.getRequestDispatcher("/views/user/loginPage.jsp").forward(request, response);
             }
 
